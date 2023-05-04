@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:background="#ff414141"
+	android:layout_width="fill_parent"
+	android:orientation="vertical"
+	android:padding="5dp"
+	android:layout_height="wrap_content">
+
+	<LinearLayout
+		android:id="@+id/alert_dialog_list_title_layout"
+		android:layout_width="match_parent"
+		android:layout_height="55dp"
+		android:layout_marginStart="10.0dip"
+		android:layout_marginEnd="10.0dip"
+		android:layout_marginBottom="7dp"
+		android:layout_marginTop="2.0dip"
+		android:gravity="start|center"
+		android:orientation="horizontal"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toTopOf="@+id/alert_dialog_list_content"
+		>
+
+		<ImageView
+			android:id="@+id/detail_icon"
+			android:layout_width="45dp"
+			android:layout_height="45dp"
+			android:contentDescription="@string/appimg"
+			android:gravity="center_vertical"
+			android:scaleType="fitXY"
+			android:layout_marginEnd="5.0dip"
+			android:src="@mipmap/ic_launcher" />
+
+		<TextView
+			android:id="@+id/alert_dialog_list_title"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginStart="5.0dip"
+			android:gravity="center_vertical"
+			android:text="@string/app_name"
+			android:textColor="@color/white"
+			android:textSize="18sp" />
+		<View
+			android:layout_width="0dp"
+			android:layout_height="1dp"
+			android:layout_weight="1"/>
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/alert_dialog_list_content"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/alert_dialog_list_title_layout"
+		android:layout_marginStart="10.0dip"
+		android:layout_marginEnd="10.0dip"
+		android:layout_marginBottom="7dp"
+		android:layout_marginTop="7.0dip"
+		android:gravity="center|start"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/alert_dialog_list_title_layout"
+		app:layout_constraintBottom_toTopOf="@+id/view3"
+		android:text="@string/device_admin_fullex"
+		android:textColor="@color/fav_grey"
+		android:textSize="16sp" />
+	<LinearLayout
+		android:id="@+id/view3"
+		android:gravity="center|end"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="56.0dip"
+		android:layout_marginBottom="2dp"
+		android:layout_marginTop="7.0dip"
+		android:layout_marginEnd="7.0dip"
+		android:layout_marginStart="10.0dip"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/alert_dialog_list_content"
+		app:layout_constraintBottom_toBottomOf="parent">
+		<View
+			android:layout_width="0dp"
+			android:layout_height="1dp"
+			android:layout_weight="1"/>
+		<Button
+			android:id="@+id/alert_dialog_list_cancel"
+			android:background="@drawable/btn_3_bg"
+			android:paddingLeft="18.0dip"
+			android:paddingRight="18.0dip"
+			android:layout_width="wrap_content"
+			android:layout_height="36.0dip"
+			android:textAppearance="@android:style/TextAppearance.Holo.Large"
+			android:text="@string/softkey_cancel"
+			android:textSize="18sp"
+			android:textColor="@color/dialog_button_color"
+			style="?android:attr/buttonBarButtonStyle" />
+		<Button
+			android:id="@+id/alert_dialog_list_ok"
+			android:background="@drawable/btn_3_bg"
+			android:paddingLeft="18.0dip"
+			android:paddingRight="18.0dip"
+			android:layout_width="wrap_content"
+			android:layout_height="36.0dip"
+			android:textSize="18sp"
+			android:textAppearance="@android:style/TextAppearance.Holo.Large"
+			android:text="@string/softkey_ok"
+			android:textColor="@color/dialog_button_color"
+			style="?android:attr/buttonBarButtonStyle" />
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

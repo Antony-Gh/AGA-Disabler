@@ -1,0 +1,29 @@
+<resources>
+	<color	name="colorPrimary">#FF000000</color>
+	<color	name="colorPrimaryDark">@color/knox_back_color</color>
+	<color	name="colorAccent">#FFAA0909</color>
+	<color	name="colorControlHighlight">#FF000000</color>
+	<color	name="colorControlNormal">#FF000000</color>
+	<color	name="background_9">#26000000</color>
+	<color	name="yes_green">#FF006a4e</color>
+	<color	name="no_red">#FFff2052</color>
+	<color	name="darkblue">#FF0d47a1</color>
+	<color	name="white">#FFFFFFFF</color>
+	<color	name="loadingdialogback">#FF666666</color>
+	<color	name="grey">#FF999999</color>
+	<color name="appinfobuttoncolor">#FF4CAF50</color>
+	<color name="knox_back_color">#ff404040</color>
+    <color name="appinfo_title">#FFFF3232</color>
+	<color name="red">#ff00</color>
+	<color name="orange">#FFFF9800</color>
+	<color name="blue">#33B5E5</color>
+	<color name="black">#000000</color>
+	<color name="pink">#F50057</color>
+	<color name="cyan">#00BCD4</color>
+	<color name="green">#4CAF50</color>
+	<color name="yellow">#FFEB3B</color>
+	<color name="fav_grey">#FFAAAAAA</color>
+	<color name="fav_black">#FF323232</color>
+	<color name="fav_back">#FF4E342E</color>
+	<color name="dialog_button_color">#FF598bd2</color>
+</resources>

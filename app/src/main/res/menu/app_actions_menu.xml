@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_disable"
+        android:orderInCategory="1"
+        android:title="Disable"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_uninstall"
+        android:orderInCategory="2"
+        android:title="Uninstall"
+        app:showAsAction="never"/>
+    <item
+    android:id="@+id/action_launch"
+    android:orderInCategory="3"
+    android:title="Launch"
+    app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="4"
+        android:title="Open App Settings"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_exportapk"
+        android:orderInCategory="5"
+        android:title="Export APK"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_exportimg"
+        android:orderInCategory="6"
+        android:title="Export App Icon"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="7"
+        android:title="Share"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_update"
+        android:orderInCategory="8"
+        android:title="Check Market Update"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_per"
+        android:orderInCategory="9"
+        android:title="Show Permissions"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_man"
+        android:orderInCategory="10"
+        android:title="View Manifest XML"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_addhome"
+        android:orderInCategory="10"
+        android:title="Add Icon To HomeScreen"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_bat"
+        android:orderInCategory="10"
+        android:title="Prevent Battery Optimize"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_cache"
+        android:orderInCategory="10"
+        android:title="Prevent Clear Cache"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_data"
+        android:orderInCategory="10"
+        android:title="Prevent Clear Data"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_force"
+        android:orderInCategory="10"
+        android:title="Prevent Close Or Force Stop"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_noti"
+        android:orderInCategory="10"
+        android:title="Disable App Notification"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_start"
+        android:orderInCategory="10"
+        android:title="Prevent App Start"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_prevun"
+        android:orderInCategory="10"
+        android:title="Prevent Uninstall"
+        app:showAsAction="never"/>
+</menu>

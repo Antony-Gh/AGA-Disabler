@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="settings"
+        android:enabled="true"
+        android:icon="@drawable/app_settings"
+        android:shortcutShortLabel="@string/shortcut1_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.aga.disabler.pro"
+            android:targetClass="com.aga.disabler.pro.activity.SettingsActivity" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="info"
+        android:enabled="true"
+        android:icon="@drawable/ic_info_dark"
+        android:shortcutShortLabel="@string/shortcut2_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.aga.disabler.pro"
+            android:targetClass="com.aga.disabler.pro.activity.ScrollingActivity" />
+    </shortcut>
+</shortcuts>

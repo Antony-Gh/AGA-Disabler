@@ -1,0 +1,81 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="HwCheckBox">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:theme">@android:style/Widget.Material.CompoundButton.CheckBox</item>
+    </style>
+
+    <style name="HwLinear">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingStart">20dp</item>
+    </style>
+
+    <style name="HwDescription">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.Large</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Preferencetheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SamsungCursor" parent="TextAppearance.AppCompat">
+        <item name="android:textCursorDrawable">@drawable/samsung_cursor</item>
+        <item name="android:background">@drawable/client_edittext_bg</item>
+        <item name="android:textColorHint">#33ffffff</item>
+    </style>
+
+
+    <style name="appinfo_fab_style">
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="appinfo_button_style">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:background">@drawable/appinfo_btn_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.Large</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowEnterTransition">@transition/explode</item>
+        <item name="android:windowExitTransition">@transition/explode</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/changebounds</item>
+        <item name="android:windowSharedElementExitTransition">@transition/changebounds</item>
+    </style>
+
+</resources>

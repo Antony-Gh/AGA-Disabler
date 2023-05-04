@@ -1,0 +1,252 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        android:selectable="false"
+        app:icon="@drawable/wifi_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="Wifi">
+        <CheckBoxPreference
+            android:key="disable_wifi"
+            android:title="Disable Wifi"
+            app:iconSpaceReserved="false"
+            android:summary="once it is disabled. Wi-Fi is turned off and disabled"
+            />
+        <CheckBoxPreference
+            android:key="disable_wifi_change"
+            app:iconSpaceReserved="false"
+            android:title="Disable Wifi state change"
+            android:summary="Prevent user from turn off or on wifi from device settings or notification bar"
+            />
+        <CheckBoxPreference
+            android:key="disable_auto_connect_to_wifi"
+            app:iconSpaceReserved="false"
+            android:title="Disable automatic connection to Wifi"
+            android:summary="Prevent user from turning on automatic connection to wifi in device settings"
+            />
+        <CheckBoxPreference
+            android:key="disable_wifi_scanning"
+            app:iconSpaceReserved="false"
+            android:title="Disable Wifi scanning"
+            android:summary="Prevent user from turning on Wifi scanning in device settings"
+            />
+        <CheckBoxPreference
+            android:key="disable_wifi_direct"
+            app:iconSpaceReserved="false"
+            android:title="Disable Wifi direct"
+            android:summary="Prevent user from turning on Wifi direct in device settings"
+            />
+        <CheckBoxPreference
+            android:key="disable_wifi_hotspot"
+            app:iconSpaceReserved="false"
+            android:title="Disable Wifi tethering (Hotspot)"
+            android:summary="Prevent user from turning on Wifi tethering (hotspot) in device settings or notification bar"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        android:selectable="false"
+        app:icon="@drawable/bluetooth_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="Bluetooth">
+        <CheckBoxPreference
+            android:key="disable_bluetooth"
+            app:iconSpaceReserved="false"
+            android:title="Disable Bluetooth"
+            android:summary="Prevent user from turning on Bluetooth in device settings or notification bar"
+            />
+        <CheckBoxPreference
+            android:key="disable_bluetooth_tethering"
+            app:iconSpaceReserved="false"
+            android:title="Disable Bluetooth tethering"
+            android:summary="Disable Bluetooth tethering "
+            />
+        <CheckBoxPreference
+            android:key="disable_bluetooth_pairing"
+            app:iconSpaceReserved="false"
+            android:title="Disable Bluetooth pairing"
+            android:summary="Disable Bluetooth pairing with other devices, pc, laptops"
+            />
+        <CheckBoxPreference
+            android:key="disable_bluetooth_visible"
+            app:iconSpaceReserved="false"
+            android:title="Disable Bluetooth display"
+            android:summary="Make this device undiscovered by other devices, pc, laptops"
+            />
+        <CheckBoxPreference
+            android:key="disable_bluetooth_laptop_pairing"
+            app:iconSpaceReserved="false"
+            android:title="Disable Bluetooth pairing with desktops"
+            android:summary="Make this device cannot be connected to any Bluetooth devices falling into the desktop or laptop category"
+            />
+        <CheckBoxPreference
+            android:key="disable_bluetooth_data_transfer"
+            app:iconSpaceReserved="false"
+            android:title="Disable Bluetooth data transfer"
+            android:summary="any file sharing through Bluetooth fails"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        android:selectable="false"
+        app:icon="@drawable/apps_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="Apps">
+        <CheckBoxPreference
+            android:key="disable_admin_activate"
+            app:iconSpaceReserved="false"
+            android:title="Disable new admin activate"
+            android:summary="Prevent new administrator activation allowed"
+            />
+        <CheckBoxPreference
+            android:key="disable_admin_install"
+            app:iconSpaceReserved="false"
+            android:title="Disable new admin install"
+            android:summary="Prevent new administrator installation allowed"
+            />
+        <CheckBoxPreference
+            android:key="disable_unknown_resource_install"
+            app:iconSpaceReserved="false"
+            android:title="Disable non market apps install"
+            android:summary="Non-Google-Play application installation is disabled and cannot be enabled by user."
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        android:selectable="false"
+        app:icon="@drawable/system_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="System">
+        <CheckBoxPreference
+            android:key="disable_device_loud"
+            app:iconSpaceReserved="false"
+            android:title="Disable device loud speaker"
+            android:summary="Disable device loud speakers system"
+            />
+        <CheckBoxPreference
+            android:key="disable_display_mirroring"
+            app:iconSpaceReserved="false"
+            android:title="Disable display mirroring"
+            android:summary="Disable mirror what’s on your phone’s screen to a bigger screen, like a smart TV."
+            />
+        <CheckBoxPreference
+            android:key="disable_multi_window"
+            app:iconSpaceReserved="false"
+            android:title="Disable multi window"
+            android:summary="Disable display two apps or more on your screen simultaneously."
+            />
+        <CheckBoxPreference
+            android:key="hide_status_bar"
+            app:iconSpaceReserved="false"
+            android:title="Hide status bar"
+            android:summary="Hide status bar for all apps but user still can pull down status bar"
+            />
+        <CheckBoxPreference
+            android:key="disable_usb_mass"
+            app:iconSpaceReserved="false"
+            android:title="Disable Usb mass storage"
+            android:summary="Disable (MTP) when the device is connected to a PC the device will not show up as connected to the PC."
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        android:selectable="false"
+        app:icon="@drawable/date_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="Date And Time">
+        <CheckBoxPreference
+            android:key="disable_automatic_time"
+            app:iconSpaceReserved="false"
+            android:title="Disable automatic time"
+            android:summary="Disable device obtain the time automatically by enabling Network Identity and Time Zone (NITZ) or set the time automatically by enabling the (NITZ) option."
+            />
+        <CheckBoxPreference
+            android:key="disable_datetime_change"
+            app:iconSpaceReserved="false"
+            android:title="Disable change date and time settings"
+            android:summary="Prevent the user from changing the date and time setting."
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        app:icon="@drawable/dex_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="Samsung Dex">
+        <CheckBoxPreference
+            android:key="disable_dex_mode"
+            app:iconSpaceReserved="false"
+            android:title="Disable dex"
+            android:summary="Disable the Samsung Dex mode"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        app:icon="@drawable/kiosk_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="Samsung Kiosk">
+        <CheckBoxPreference
+            android:key="disable_task_manager"
+            app:iconSpaceReserved="false"
+            android:title="Disable task manager"
+            android:summary="Disable task manager application and recent applications window."
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        app:iconSpaceReserved="false"
+        app:icon="@drawable/hardware_pref_icon"
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        android:title="Hardware keys">
+        <CheckBoxPreference
+            android:key="disable_back_button"
+            app:iconSpaceReserved="false"
+            android:title="Disable back button"
+            android:summary="block the user from using back key"
+            />
+        <CheckBoxPreference
+            android:key="disable_home_button"
+            app:iconSpaceReserved="false"
+            android:title="Disable home button"
+            android:summary="block the user from using home key"
+            />
+        <CheckBoxPreference
+            android:key="disable_recent_button"
+            app:iconSpaceReserved="false"
+            android:title="Disable all apps button"
+            android:summary="block the user from using all apps/recent key"
+            />
+        <CheckBoxPreference
+            android:key="disable_up_button"
+            app:iconSpaceReserved="false"
+            android:title="Disable volume up button"
+            android:summary="block the user from using volume up key"
+            />
+        <CheckBoxPreference
+            android:key="disable_down_button"
+            app:iconSpaceReserved="false"
+            android:title="Disable volume down button"
+            android:summary="block the user from using volume down key"
+            />
+        <CheckBoxPreference
+            android:key="disable_power_button"
+            app:iconSpaceReserved="false"
+            android:title="Disable power button"
+            android:summary="block the user from using power key"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/linear1"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="top|center"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|start"
+        android:padding="6dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_info_white"
+            android:layout_marginEnd="5dp"
+            android:scaleType="fitXY" />
+        <TextView
+            android:id="@+id/no_apps_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/device_info"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/fav_grey"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollall"
+        android:visibility="gone"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/wifiheader"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+
+            <include
+                android:id="@+id/macaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/ipaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/wifistates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/wificonfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/devicedetailsheader"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+
+            <include
+                android:id="@+id/devicename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/manufacturerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/devicemodel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/codename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+            <include
+                android:id="@+id/serialnoo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/imei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+
+            <include
+                android:id="@+id/androidver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/bootloaderbuild"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/kernalinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/rootinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/firestate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/warranty_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/country_of_origin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/build_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/dev_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/all_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+
+
+            <include
+                android:id="@+id/Batteryinfo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+
+            <include
+                android:id="@+id/batteryhealth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/batterylevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/batterychargingstate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+            <include
+                android:id="@+id/batterytech"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/batterytemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/usbcable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/batteryvolt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/batterycap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+
+
+
+
+
+
+
+
+            <include
+                android:id="@+id/Displayinfo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+
+
+            <include
+                android:id="@+id/resolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/density"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/screenrefreshrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/dpi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/screentimeout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/pixforx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/pixfory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/bright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/screenwidth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/screenheight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/screeninches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+
+
+
+
+
+            <include
+                android:id="@+id/Sensorinfo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+
+            <include
+                android:id="@+id/sensordetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+
+
+
+
+            <include
+                android:id="@+id/processor_info"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+            <include
+                android:id="@+id/procinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/proccores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+
+
+
+            <include
+                android:id="@+id/locinfo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+
+            <include
+                android:id="@+id/loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+
+
+
+
+
+
+            <include
+                android:id="@+id/Otherinfo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/header_view" />
+
+            <include
+                android:id="@+id/ramdetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/storagedetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/countrycode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/productcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+            <include
+                android:id="@+id/securitypatchlvl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/devid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+            <include
+                android:id="@+id/javavmversion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                layout="@layout/content_view" />
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/load_linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <com.aga.disabler.pro.adapters.AGAProgressbar
+            android:id="@+id/aga_progress_bar"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:src="@drawable/ic_load"
+            />
+    </LinearLayout>
+</LinearLayout>

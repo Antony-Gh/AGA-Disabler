@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceCategory android:title="Developers info">
+<Preference app:iconSpaceReserved="false" android:selectable="false" android:summary="Antony Ghayes" />
+    <Preference android:selectable="false" android:title="Contact Info" />
+    <Preference app:icon="@drawable/gmail" app:title="E-mail" app:summary="knkmam05@gmail.com" android:key="email"/>
+    <Preference app:icon="@drawable/whatsimg" app:title="WhatsApp" app:summary="+201273481309" android:key="whats"/>
+</PreferenceCategory>
+    <PreferenceCategory android:title="@string/app_set">
+        <Preference app:iconSpaceReserved="false" android:title="@string/sign_in" android:key="signin"/>
+        <Preference app:iconSpaceReserved="false" android:title="@string/uninstall_this_app" android:key="uni"/>
+        <Preference app:iconSpaceReserved="false" android:title="Share AGA Disabler" android:key="shareaga"/>
+        <Preference app:iconSpaceReserved="false" android:title="Lock AGA Disabler" android:key="lockaga"/>
+        <Preference app:iconSpaceReserved="false" android:title="About" android:key="about"/>
+        <Preference app:iconSpaceReserved="false" android:title="Games Mode" android:key="game"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/dev_set">
+        <Preference app:iconSpaceReserved="false" android:title="@string/control_dev" android:key="policy"/>
+        <Preference app:iconSpaceReserved="false" android:title="Device Info" android:key="info"/>
+    </PreferenceCategory>
+    </PreferenceScreen>
+
