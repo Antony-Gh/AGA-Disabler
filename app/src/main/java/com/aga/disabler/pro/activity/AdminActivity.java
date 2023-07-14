@@ -14,7 +14,6 @@ import static com.aga.disabler.pro.tools.Helper.savepkgname;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -215,7 +214,7 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 		getMenuInflater().inflate(R.menu.menu_main_dropdown, menu);
 		MenuItem searchViewItem = menu.findItem(R.id.action_search);
 		searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
-		ImageView closeButton = (ImageView)searchView.findViewById(R.id.search_close_btn);
+		ImageView closeButton = (ImageView) searchView.findViewById(R.id.search_close_btn);
 		closeButton.setOnClickListener(v -> {
 			searchView.setIconified(true);
 			searchView.onActionViewCollapsed();
@@ -241,7 +240,7 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 			}
 		});
 		searchView.setOnCloseListener(() -> {
-			seaapps(insList, "");
+			if(listviewall.getVisibility() == View.VISIBLE){seaapps(insList, "");}
 			return false;
 		});
 		return super.onCreateOptionsMenu(menu);

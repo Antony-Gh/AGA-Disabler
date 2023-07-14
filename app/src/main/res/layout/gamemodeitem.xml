@@ -32,7 +32,7 @@
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/black"
-            android:textAppearance="@android:style/TextAppearance.Holo.Large"
+            android:textAppearance="@style/merrifont"
             android:textStyle="bold|italic"
             android:textSize="12sp" />
         <TextView
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/app_package"
-            android:textAppearance="@android:style/TextAppearance.Holo.Large"
+            android:textAppearance="@style/robotofont"
             android:textSize="12sp"
             android:textColor="@color/grey" />
     </LinearLayout>

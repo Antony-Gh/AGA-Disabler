@@ -681,7 +681,7 @@ public class   Helper {
         d.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
         d.draw(canvas);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         return stream.toByteArray();
     }
 

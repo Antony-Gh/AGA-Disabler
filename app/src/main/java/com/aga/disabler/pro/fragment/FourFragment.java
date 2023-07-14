@@ -116,8 +116,8 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
 
     public static void callme(Context c) {
         Uri whatsurl = Uri.parse("https://wa.me/qr/U7UREOZBBFO5K1");
-        Uri con = Uri.parse("https://wa.me/201273481309");
-        Uri intg = Uri.parse("tel:01273481309");
+        Uri con = Uri.parse("https://wa.me/+201273481309");
+        Uri intg = Uri.parse("tel:+201273481309");
 
         try{
             c.startActivity(new Intent(Intent.ACTION_VIEW, whatsurl));

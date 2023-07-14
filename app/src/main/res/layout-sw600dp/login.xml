@@ -23,6 +23,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="60dp"
 				android:gravity="center"
+				android:textAppearance="@style/merrifont"
 				android:text="@string/app_name"
 				android:textSize="28sp"
 				android:textStyle="bold"
@@ -106,7 +107,8 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="12dp"
-					android:gravity="center_horizontal|center_vertical"
+					android:gravity="center"
+					android:textAppearance="@style/merrifont"
 					android:text="Welcome to my app"
 					android:textSize="22sp"
 					android:textColor="#FFFFFF"/>
@@ -147,6 +149,7 @@
 									android:layout_width="0dp"
 									android:layout_height="wrap_content"
 									android:text="@string/key"
+									android:textAppearance="@style/merrifont"
 									android:gravity="center"
 									android:layout_weight="1"
 									android:textColor="@color/black"
@@ -167,6 +170,7 @@
 									android:gravity="start|center"
 									android:textSize="18sp"
 									android:textColor="#FF000000"
+									android:textAppearance="@style/robotofont"
 									style="@style/SamsungCursor"
 									android:hint="Your Key" />
 							</com.google.android.material.textfield.TextInputLayout>
@@ -184,6 +188,7 @@
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:text="@string/key"
+								android:textAppearance="@style/robotofont"
 								android:textSize="18sp"
 								android:textColor="#F44336"/>
 						</LinearLayout>
@@ -215,6 +220,7 @@
 									android:layout_width="match_parent"
 									android:layout_height="match_parent"
 									android:gravity="center"
+									android:textAppearance="@style/merrifont"
 									android:text="@string/sign_in"
 									android:textSize="18sp"
 									android:textColor="#000000"/>

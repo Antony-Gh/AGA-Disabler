@@ -9,6 +9,6 @@
 		android:layout_height="match_parent"
 		android:padding="4dp"
 		android:background="@drawable/splashbgg"
-		android:gravity="center_horizontal|center_vertical"
+		android:gravity="center"
 		android:orientation="vertical"/>
 </LinearLayout>

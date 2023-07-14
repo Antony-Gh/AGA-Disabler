@@ -32,17 +32,18 @@
             android:text="Installed Apps"
             android:layout_height="match_parent"
             android:layout_width="0dp"
+            android:textSize="20sp"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:textAppearance="@android:style/TextAppearance.Holo.Large" />
+            android:textAppearance="@style/merrifont" />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:id="@+id/reload"
-            android:padding="5dp"
+            android:padding="8dp"
             android:src="@drawable/ic_cache_black"
             android:scaleType="fitXY"/>
 
@@ -82,7 +83,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         style="?android:attr/buttonBarButtonStyle"
-        android:textAppearance="@android:style/TextAppearance.Holo.Large"
+        android:textAppearance="@style/merrifont"
         android:background="@drawable/btn_1_bg"
         android:text="Save"
         android:layout_margin="5dp"

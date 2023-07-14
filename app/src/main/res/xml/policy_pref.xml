@@ -23,6 +23,8 @@
         <CheckBoxPreference
             android:key="disable_auto_connect_to_wifi"
             app:iconSpaceReserved="false"
+            app:allowDividerAbove="true"
+            app:allowDividerBelow="true"
             android:title="Disable automatic connection to Wifi"
             android:summary="Prevent user from turning on automatic connection to wifi in device settings"
             />

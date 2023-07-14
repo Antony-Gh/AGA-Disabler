@@ -502,7 +502,7 @@ You can disable it, delete it, or know all of its information</string>
     <string name="save_changes_alert">Do you want to exit with out save changes</string>
     <string name="dis_porn_title">Disable Porn Sites</string>
     <string name="dis_porn_desc">Are you sure you want to disable porn sites ? \n you won\'t be able to enable it again</string>
-    <string name="extract_manifest_xml_file">Extract Manifest XML File</string>
+    <string name="extract_manifest_xml_file">Extract Manifest</string>
     <string name="img_transition" translatable="false">img_transition</string>
     <string name="usb_state">Usb State : </string>
     <string name="imei_tit">IMEI : </string>

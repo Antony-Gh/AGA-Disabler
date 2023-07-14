@@ -11,15 +11,15 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
     <uses-permission
         android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INSTALL_SHORTCUT" />
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -122,12 +122,8 @@
     <uses-feature android:name="android.software.leanback" android:required="false"/>
     <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
     <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
-    <uses-feature
-        android:name="android.hardware.location.gps"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.microphone"
-        android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
 
     <application
         android:name=".AGA_App"
@@ -145,7 +141,7 @@
         android:requestLegacyExternalStorage="true"
         android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.AGADisabler.NoActionBar"
         tools:replace="android:allowBackup"
         android:dataExtractionRules="@xml/data_extraction_rules"
         tools:targetApi="s">
@@ -183,17 +179,17 @@
         <activity
             android:name=".activity.AboutActivity"
             android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.AGADisabler.NoActionBar" />
 
         <activity
             android:name=".activity.GameModeActivity"
             android:label="Game Mode Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.AGADisabler.NoActionBar"  />
 
         <activity
             android:name=".activity.LockActivity"
             android:label="@string/lock_activity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.AGADisabler.NoActionBar" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -203,7 +199,7 @@
             android:name=".activity.ScrollingActivity"
             android:exported="true"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AGADisabler.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -223,12 +219,10 @@
 
         <activity
             android:name=".activity.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/Preferencetheme" />
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".activity.AllDevicePolicyActivity"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".activity.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
@@ -269,9 +263,10 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.AdminActivity"
+            android:theme="@style/Theme.AGADisabler.NoActionBar"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.AppinfoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
@@ -283,12 +278,13 @@
             android:directBootAware="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".activity.SplashActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:directBootAware="true"
             android:hardwareAccelerated="true"
+            android:theme="@style/Theme.AGADisabler.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.PoliciesActivity"
@@ -306,7 +302,7 @@
             android:exported="false"
             android:label="@string/error_title"
             android:process=":error_activity"
-            android:theme="@style/AppTheme.FullScreen">
+            android:theme="@style/Theme.AGADisabler.FullScreen">
             <intent-filter>
                 <action android:name="cat.ereza.customactivityoncrash.RESTART" />
             </intent-filter>
