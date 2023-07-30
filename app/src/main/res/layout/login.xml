@@ -1,14 +1,13 @@
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/linear1"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="#000000"
 	android:padding="8dp"
+	android:id="@+id/linear1"
 	android:gravity="center_horizontal|top"
 	android:orientation="vertical">
 		<LinearLayout
-			android:id="@+id/linear37"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:padding="6dp"
@@ -41,12 +40,14 @@
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
 				android:src="@drawable/instaimg"
+				android:contentDescription="@string/instagram"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
 			<ImageView
 				android:id="@+id/imageview10"
 				android:layout_width="35dp"
 				android:layout_height="35dp"
+				android:contentDescription="@string/whats_app"
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
 				android:src="@drawable/whatsimg"
@@ -56,6 +57,7 @@
 				android:id="@+id/imageview11"
 				android:layout_width="35dp"
 				android:layout_height="35dp"
+				android:contentDescription="@string/facebook"
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
 				android:src="@drawable/faceimg"
@@ -67,6 +69,7 @@
 				android:layout_height="35dp"
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
+				android:contentDescription="@string/telegram"
 				android:src="@drawable/teleimg"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
@@ -76,6 +79,7 @@
 				android:layout_height="35dp"
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
+				android:contentDescription="@string/youtube"
 				android:src="@drawable/youtubeimg"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
@@ -87,6 +91,7 @@
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
 				android:layout_weight="1"
+				android:contentDescription="@string/twitter"
 				android:scaleType="fitCenter"
 				android:src="@drawable/twitterimg" />
 		</LinearLayout>
@@ -105,7 +110,7 @@
 					android:layout_marginBottom="8dp"
 					android:gravity="center"
 					android:textAppearance="@style/merrifont"
-					android:text="Welcome to my app"
+					android:text="@string/welcome_to_my_app"
 					android:textSize="16sp"
 					android:textColor="#FFFFFF"/>
 					<LinearLayout
@@ -119,14 +124,15 @@
 						<LinearLayout
 							android:id="@+id/all"
 							android:layout_width="match_parent"
-							android:layout_height="65dp"
-							android:padding="6dp"
+							android:layout_height="70dp"
+							android:padding="4dp"
 							android:gravity="center|start"
-							android:orientation="horizontal">
+							android:orientation="horizontal"
+							android:baselineAligned="false">
 							<LinearLayout
 								android:id="@+id/linear39"
-								android:layout_width="65dp"
-								android:layout_height="45dp"
+								android:layout_width="70dp"
+								android:layout_height="40dp"
 								android:background="#FF9800"
 								android:gravity="center|start"
 								android:orientation="horizontal">
@@ -135,6 +141,7 @@
 									android:layout_width="0dp"
 									android:layout_height="25dp"
 									android:padding="3dp"
+									android:contentDescription="@string/license_key"
 									android:layout_weight="1"
 									android:src="@drawable/ic_vpn_key_white"
 									android:scaleType="fitCenter"/>
@@ -154,20 +161,19 @@
 								android:id="@+id/textinputlayout5"
 								android:layout_width="0dp"
 								android:layout_height="match_parent"
-								android:padding="6dp"
+								android:padding="8dp"
 								android:gravity="start|center"
 								android:layout_weight="1">
 								<com.aga.disabler.pro.samsung.ClientEditText
 									android:id="@+id/lice"
 									android:layout_width="match_parent"
 									android:layout_height="match_parent"
-									android:padding="4dp"
 									android:textAppearance="@style/robotofont"
 									android:gravity="start|center"
 									android:textSize="12sp"
 									android:textColor="#FF000000"
 									style="@style/SamsungCursor"
-									android:hint="Your Key" />
+									android:hint="@string/your_key" />
 							</com.google.android.material.textfield.TextInputLayout>
 						</LinearLayout>
 						<LinearLayout

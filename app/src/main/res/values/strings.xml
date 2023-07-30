@@ -506,5 +506,13 @@ You can disable it, delete it, or know all of its information</string>
     <string name="img_transition" translatable="false">img_transition</string>
     <string name="usb_state">Usb State : </string>
     <string name="imei_tit">IMEI : </string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="instagram" translatable="false">Instagram</string>
+    <string name="whats_app" translatable="false">Whats App</string>
+    <string name="telegram" translatable="false">Telegram</string>
+    <string name="twitter" translatable="false">Twitter</string>
+    <string name="welcome_to_my_app">Welcome to my app</string>
+    <string name="your_key">Type Your Key</string>
+    <string name="license_key" translatable="false">License Key</string>
 
 </resources>

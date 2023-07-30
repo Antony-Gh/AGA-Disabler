@@ -476,5 +476,8 @@
     <string name="extract_manifest_xml_file">Extract Manifest</string>
     <string name="usb_state">حالة الUSB : </string>
     <string name="imei_tit">IMEI : </string>
+    <string name="unknown_error">خطأ غير معروف</string>
+    <string name="welcome_to_my_app">اهلا بك</string>
+    <string name="your_key">اكتب مفتاح الدخول</string>
 
 </resources>

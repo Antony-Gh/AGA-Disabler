@@ -2,15 +2,11 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:id="@+id/linear1"
+	android:background="#000000"
+	android:padding="16dp"
+	android:gravity="center_horizontal|top"
 	android:orientation="vertical">
-	<LinearLayout
-		android:id="@+id/linear1"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:background="#000000"
-		android:padding="16dp"
-		android:gravity="center_horizontal|top"
-		android:orientation="vertical">
 		<LinearLayout
 			android:id="@+id/linear37"
 			android:layout_width="match_parent"
@@ -44,6 +40,7 @@
 				android:layout_height="70dp"
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
+				android:contentDescription="@string/instagram"
 				android:src="@drawable/instaimg"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
@@ -53,6 +50,7 @@
 				android:layout_height="70dp"
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
+				android:contentDescription="@string/whats_app"
 				android:src="@drawable/whatsimg"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
@@ -63,6 +61,7 @@
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
 				android:src="@drawable/faceimg"
+				android:contentDescription="@string/facebook"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
 			<ImageView
@@ -72,6 +71,7 @@
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
 				android:src="@drawable/teleimg"
+				android:contentDescription="@string/telegram"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
 			<ImageView
@@ -80,6 +80,7 @@
 				android:layout_height="70dp"
 				android:layout_marginLeft="6dp"
 				android:layout_marginRight="6dp"
+				android:contentDescription="@string/youtube"
 				android:src="@drawable/youtubeimg"
 				android:scaleType="fitCenter"
 				android:layout_weight="1"/>
@@ -92,6 +93,7 @@
 				android:layout_marginRight="6dp"
 				android:layout_weight="1"
 				android:scaleType="fitCenter"
+				android:contentDescription="@string/twitter"
 				android:src="@drawable/twitterimg" />
 		</LinearLayout>
 			<LinearLayout
@@ -109,7 +111,7 @@
 					android:layout_marginBottom="12dp"
 					android:gravity="center"
 					android:textAppearance="@style/merrifont"
-					android:text="Welcome to my app"
+					android:text="@string/welcome_to_my_app"
 					android:textSize="22sp"
 					android:textColor="#FFFFFF"/>
 					<LinearLayout
@@ -126,7 +128,8 @@
 							android:layout_height="90dp"
 							android:padding="6dp"
 							android:gravity="center"
-							android:orientation="horizontal">
+							android:orientation="horizontal"
+							android:baselineAligned="false">
 							<LinearLayout
 								android:id="@+id/linear39"
 								android:layout_width="120dp"
@@ -141,6 +144,7 @@
 									android:layout_height="40dp"
 									android:padding="3dp"
 									android:layout_weight="1"
+									android:contentDescription="@string/license_key"
 									android:src="@drawable/ic_vpn_key_white"
 									android:scaleType="fitCenter"/>
 
@@ -172,7 +176,7 @@
 									android:textColor="#FF000000"
 									android:textAppearance="@style/robotofont"
 									style="@style/SamsungCursor"
-									android:hint="Your Key" />
+									android:hint="@string/your_key" />
 							</com.google.android.material.textfield.TextInputLayout>
 						</LinearLayout>
 						<LinearLayout
@@ -228,5 +232,4 @@
 						</LinearLayout>
 					</LinearLayout>
 				</LinearLayout>
-			</LinearLayout>
 </LinearLayout>

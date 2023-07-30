@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Aurora" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="Theme.AGADisabler" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/lightgreen</item>
@@ -16,7 +16,7 @@
         <item name="colorAccent">@color/green</item>
     </style>
 
-    <style name="Theme.Aurora.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.AGADisabler.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/lightgreen</item>

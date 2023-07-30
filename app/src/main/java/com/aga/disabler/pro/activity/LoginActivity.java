@@ -34,6 +34,10 @@ import java.util.Objects;
 public class LoginActivity extends  AppCompatActivity {
 
 
+    private static final int ERR_LICENCE_NOT_EXIST = 1;
+    private static final int ERR_IMEI_MISMATCHED = 2;
+    private static final int ERR_LICENCE_UNAVAILABLE = 3;
+    private static final int ERR_UNKNOWN = 0;
     private String IMEI;
 
     private LinearLayout linear1;
@@ -187,9 +191,8 @@ public class LoginActivity extends  AppCompatActivity {
                 Log.d("All Accounts :  ", dataSnapshot.toString());
                 final long all_usr = dataSnapshot.getChildrenCount();
                 Log.d("Child Count :  ",  "S : " + all_usr);
-                long i = 0;
+                int i4 = ERR_UNKNOWN;
                 for (DataSnapshot p : dataSnapshot.getChildren()) {
-                    long i2 = i;
                     String block = Objects.requireNonNull(p.child("block").getValue()).toString();
                     String lic = Objects.requireNonNull(p.child("lic").getValue()).toString();
                     String imei = Objects.requireNonNull(p.child("usri").getValue()).toString();
@@ -215,33 +218,42 @@ public class LoginActivity extends  AppCompatActivity {
                                 finish();
                                 break;
                             }else{
-                                i = i2 + 1;
-                                if (i2 >= all_usr) {
-                                    texterror(getString(R.string.license_states_false));
-                                    break;
-                                }
-                            }
-                        }else{
-                            i = i2 + 1;
-                            if (i2 >= all_usr) {
-                                texterror(getString(R.string.differnet_imei));
+                                i4 = ERR_LICENCE_UNAVAILABLE;
                                 break;
                             }
-                        }
-                    }else{
-                        i = i2 + 1;
-                        Log.d("Number: ", "i : " + i + " i2 : " + i2);
-                        if (i2 >= all_usr) {
-                            texterror(getString(R.string.no_license));
+                        }else{
+                            Log.d("IMEI: ", "imei : " + imei + " Type imei : " + IMEI);
+                            i4 = ERR_IMEI_MISMATCHED;
                             break;
                         }
+                    }else{
+                        Log.d("License: ", "Lice : " + lic + " Type Lic : " + typelic);
+                        i4 = ERR_LICENCE_NOT_EXIST;
                     }
-                    i++;
                 }
+                checkerror(i4);
             }
             @Override public void onCancelled(@NotNull DatabaseError databaseError) {
+                checkerror(ERR_UNKNOWN);
             }
         });
+    }
+
+    private void checkerror(int i4) {
+        switch (i4){
+            case ERR_LICENCE_NOT_EXIST:
+                texterror(getString(R.string.no_license));
+                break;
+            case ERR_IMEI_MISMATCHED:
+                texterror(getString(R.string.differnet_imei));
+                break;
+            case ERR_LICENCE_UNAVAILABLE:
+                texterror(getString(R.string.license_states_false));
+                break;
+            case ERR_UNKNOWN:
+                texterror(getString(R.string.unknown_error));
+                break;
+        }
     }
 
     public void links(String pkg) {

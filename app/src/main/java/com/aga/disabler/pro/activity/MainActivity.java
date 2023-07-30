@@ -1,8 +1,6 @@
 package com.aga.disabler.pro.activity;
 
 import static com.aga.disabler.pro.receiver.JobsService.startAction;
-import static com.aga.disabler.pro.tools.FileUtil.getExternalStorageDir;
-import static com.aga.disabler.pro.tools.FileUtil.isExistFile;
 import static com.aga.disabler.pro.tools.Helper.getpattern;
 import static com.aga.disabler.pro.tools.MyAppinfo.isedited;
 
@@ -30,7 +28,7 @@ import com.samsung.android.knox.EnterpriseDeviceManager;
 import com.samsung.android.knox.application.ApplicationPolicy;
 
 
-public class MainActivity extends  AppCompatActivity  {
+public class MainActivity extends AppCompatActivity  {
 	private Context c;
 
 	@Override
