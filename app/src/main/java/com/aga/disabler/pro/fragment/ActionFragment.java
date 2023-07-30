@@ -1,5 +1,9 @@
 package com.aga.disabler.pro.fragment;
 
+import static com.aga.disabler.pro.tools.Helper.checkifadminapp;
+import static com.aga.disabler.pro.tools.Helper.createanapk;
+import static com.aga.disabler.pro.tools.Helper.shareapp;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,9 +25,6 @@ import com.samsung.android.knox.net.firewall.FirewallRule;
 
 import org.jetbrains.annotations.NotNull;
 
-import static com.aga.disabler.pro.tools.Helper.createanapk;
-import static com.aga.disabler.pro.tools.Helper.shareapp;
-
 public class ActionFragment extends FragmentHolder {
     private Button ex_apk;
     private Button ex_icon;
@@ -40,6 +41,8 @@ public class ActionFragment extends FragmentHolder {
     private Button blc_net;
     private Button blc_upd;
     private Button ext_mani;
+
+    private Button dis_admin;
     private boolean batteryoptimize;
     private boolean clearcache;
     private boolean cleardata;
@@ -48,8 +51,12 @@ public class ActionFragment extends FragmentHolder {
     private boolean preventuninstall;
     private boolean prevnet;
     private boolean prevupd;
+
+    private boolean disadmin;
     private devicepolicy dp;
     private appinfo appinf;
+
+    private EnterpriseDeviceManager edm;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -74,7 +81,7 @@ public class ActionFragment extends FragmentHolder {
     private void init() {
         dp = new devicepolicy(c);
         appinf = new appinfo(c, pkg);
-        EnterpriseDeviceManager edm = EnterpriseDeviceManager.getInstance(c);
+        edm = EnterpriseDeviceManager.getInstance(c);
         ApplicationPolicy ap = edm.getApplicationPolicy();
         batteryoptimize = ap.getPackagesFromBatteryOptimizationWhiteList().contains(pkg);
         clearcache = ap.getPackagesFromClearCacheBlackList().contains(pkg);
@@ -99,6 +106,17 @@ public class ActionFragment extends FragmentHolder {
         blc_net = view.findViewById(R.id.blc_net);
         blc_upd = view.findViewById(R.id.blc_upd);
         ext_mani = view.findViewById(R.id.ext_mani);
+        dis_admin = view.findViewById(R.id.dis_admin);
+        try {
+            if (checkifadminapp(c, pkg)) {
+                disadmin = edm.getAdminRemovable(pkg);
+            } else {
+                dis_admin.setVisibility(View.GONE);
+            }
+        }catch (Exception e){
+            dis_admin.setVisibility(View.GONE);
+            e.printStackTrace();
+        }
         if(batteryoptimize){prev_batt.setText(R.string.allow_battery_optimize);}else{prev_batt.setText(R.string.prevent_battery_optimize); }
         if(clearcache){prev_cache.setText(R.string.allow_clear_cache);}else{prev_cache.setText(R.string.prevent_clear_cache); }
         if(cleardata){prev_data.setText(R.string.allow_clear_data);}else{prev_data.setText(R.string.prevent_clear_data); }
@@ -107,6 +125,7 @@ public class ActionFragment extends FragmentHolder {
         if(preventstart){prev_start.setText(R.string.allow_start);}else{prev_start.setText(R.string.prevent_start); }
         if(prevnet){blc_net.setText(R.string.allow_network);}else{blc_net.setText(R.string.prevent_network);}
         if(prevupd){blc_upd.setText(R.string.allow_app_updates);}else{blc_upd.setText(R.string.prevent_app_updates);}
+        if(disadmin){dis_admin.setText(R.string.disable_admin_activation);}else{dis_admin.setText(getString(R.string.enable_admin_activation));}
     }
 
     private void initviews() {
@@ -185,6 +204,22 @@ public class ActionFragment extends FragmentHolder {
             }else{
                 prevupd = true;
                 if(dp.preventappupdate(pkg)) blc_upd.setText(R.string.allow_app_updates);
+            }
+        });
+        dis_admin.setOnClickListener(view -> {
+            try {
+                if (disadmin) {
+                    disadmin = false;
+                    if (edm.setAdminRemovable(false, pkg)) {
+                        dis_admin.setText(R.string.enable_admin_activation);
+                    }
+                } else {
+                    disadmin = true;
+                    if (edm.setAdminRemovable(true, pkg))
+                        dis_admin.setText(R.string.disable_admin_activation);
+                }
+            }catch (Exception e){
+                e.printStackTrace();
             }
         });
        wipedata.setOnClickListener(v -> dp.wipeappdata(pkg));

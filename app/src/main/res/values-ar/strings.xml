@@ -479,5 +479,6 @@
     <string name="unknown_error">خطأ غير معروف</string>
     <string name="welcome_to_my_app">اهلا بك</string>
     <string name="your_key">اكتب مفتاح الدخول</string>
+    <string name="disable_admin_activation">Disable Admin Activation</string>
 
 </resources>

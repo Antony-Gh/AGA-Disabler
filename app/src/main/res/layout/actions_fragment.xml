@@ -171,6 +171,10 @@ android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="2dp"/>
+        <Button
+            android:id="@+id/dis_admin"
+            style="@style/appinfo_button_style"
+            android:text="@string/disable_admin_activation"/>
     </LinearLayout>
 </LinearLayout>
 </ScrollView>

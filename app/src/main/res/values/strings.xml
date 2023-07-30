@@ -514,5 +514,7 @@ You can disable it, delete it, or know all of its information</string>
     <string name="welcome_to_my_app">Welcome to my app</string>
     <string name="your_key">Type Your Key</string>
     <string name="license_key" translatable="false">License Key</string>
+    <string name="disable_admin_activation">Disable Admin Activation</string>
+    <string name="enable_admin_activation">Enable Admin Activation</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.aga.disabler.pro.tools;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.admin.DevicePolicyManager;
@@ -9,6 +10,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -38,19 +40,12 @@ import com.aga.disabler.pro.fragment.AppList;
 import com.aga.disabler.pro.receiver.DeviceAdmin;
 import com.aga.disabler.pro.receiver.devicepolicy;
 import com.aga.disabler.pro.samsung.CustomDialog;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.samsung.android.knox.EnterpriseDeviceManager;
 import com.samsung.android.knox.application.ApplicationPolicy;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -59,9 +54,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 public class   Helper {
@@ -85,7 +78,7 @@ public class   Helper {
     public static boolean emmtoast(String msg, Context con) {
         try {
             LayoutInflater layoutInflater = (LayoutInflater) con.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View layout = layoutInflater.inflate(R.layout.toast_emm, null);
+            @SuppressLint("InflateParams") View layout = layoutInflater.inflate(R.layout.toast_emm, null);
             TextView text = layout.findViewById(R.id.toast_content);
             text.setText(msg);
             Toast toast = new Toast(con.getApplicationContext());
@@ -689,6 +682,15 @@ public class   Helper {
         ActivityManager manager = (ActivityManager) c.getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
             if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean checkifadminapp(Context c, String p) {
+        for (ActivityInfo receiver : Objects.requireNonNull(getarchiveinfo(c, p, PackageManager.GET_RECEIVERS)).receivers) {
+            if(receiver.permission.equals("android.permission.BIND_DEVICE_ADMIN")){
                 return true;
             }
         }
