@@ -93,7 +93,7 @@ public class Listview1Adapter extends BaseAdapter {
 
         public ViewHolder(View _view, Context c) {
             this.con = c;
-			img =  _view.findViewById(R.id.img);
+            img =  _view.findViewById(R.id.img);
 			name = _view.findViewById(R.id.name);
 			pkg = _view.findViewById(R.id.pkg);
 			imgg = _view.findViewById(R.id.imagebutton);

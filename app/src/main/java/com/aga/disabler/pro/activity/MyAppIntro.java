@@ -33,21 +33,21 @@ public class MyAppIntro extends AppIntro {
         addSlide(AppIntroFragment.newInstance(
                 getString(R.string.appintro_first_title),
                 getString(R.string.appintro_first_des),
-                R.mipmap.ic_launcher,
+                R.drawable.logo,
                 Color.parseColor("#FFFF9800"),
                 Color.WHITE,
                 Color.WHITE));
         addSlide(AppIntroFragment.newInstance(
                 getString(R.string.appintro_sec_title),
                 getString(R.string.appintro_sec_des),
-                R.mipmap.ic_launcher,
+                R.drawable.logo,
                 Color.parseColor("#FF00be84"),
                 Color.WHITE,
                 Color.WHITE));
         addSlide(AppIntroFragment.newInstance(
                 getString(R.string.appintro_sec_title),
                 getString(R.string.appintro_sec_des),
-                R.mipmap.ic_launcher,
+                R.drawable.logo,
                 Color.parseColor("#FF00be84"),
                 Color.WHITE,
                 Color.WHITE));

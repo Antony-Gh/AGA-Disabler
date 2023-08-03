@@ -23,7 +23,7 @@
                     android:layout_marginEnd="10dp"
                     android:contentDescription="@string/appimg"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/logo" />
 
                 <TextView
                     android:id="@+id/detail_app_name"

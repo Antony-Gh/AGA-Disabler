@@ -214,7 +214,7 @@ public class ScrollingActivity extends AppCompatActivity implements ExecutorServ
     private void setheader(int headerlayoutid, String headertitle) {
         LinearLayout devicedetail = findViewById(headerlayoutid);
         TextView devicetitle = devicedetail.findViewById(R.id.header_title);
-        devicetitle.setText(headertitle);
+        runOnUiThread(() -> devicetitle.setText(headertitle));
     }
 
     private void setContent(int contentlayouttitle, String contentitle, Object contentdes) {
@@ -223,10 +223,9 @@ public class ScrollingActivity extends AppCompatActivity implements ExecutorServ
         LinearLayout contentlinear = wifimac.findViewById(R.id.content_layout);
         TextView mactitle = wifimac.findViewById(R.id.contenttitle);
         TextView macadd = wifimac.findViewById(R.id.contentdes);
-        mactitle.setText(contentitle);
-        macadd.setText(contet);
-        contentlinear.setOnClickListener(v -> {
-            //TODO
+        runOnUiThread(() -> {
+            mactitle.setText(contentitle);
+            macadd.setText(contet);
         });
     }
 

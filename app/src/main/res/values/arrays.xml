@@ -44,15 +44,6 @@
         <item>dark</item>
     </array>
     <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
-    </string-array>
-
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
-    </string-array>
 	<array name="nav_drawer_labels">
         <item>@string/all_pkg_adminact</item>
         <item>@string/ins_pkg_adminact</item>
@@ -63,4 +54,17 @@
         <item>@string/settings</item>
         <item>@string/disabledapps</item>
     </array>
+
+    <string-array name="reply_entries">
+        <item>Default System Theme</item>
+        <item>Dark Theme</item>
+        <item>Light Theme</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>default</item>
+        <item>dark</item>
+        <item>light</item>
+    </string-array>
+
 </resources>

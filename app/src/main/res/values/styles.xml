@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="Theme.AGADisabler.FullScreen" parent="Theme.AGADisabler">
+    <style name="Theme.AGADisabler.FullScreen" parent="AppTheme.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
@@ -23,22 +23,28 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
-        <item name="android:paddingEnd">20dp</item>
-        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:paddingStart">18dp</item>
     </style>
 
     <style name="HwDescription">
-        <item name="android:textColor">@android:color/black</item>
         <item name="android:padding">5dp</item>
         <item name="android:gravity">start</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1.0</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textAppearance">@style/merrifont</item>
+        <item name="android:textAppearance">@style/robotofont</item>
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="Widget.AGADisabler.TextInputLayout.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeErrorColor">?attr/colorError</item>
+        <item name="errorIconTint">?attr/colorError</item>
+        <item name="errorTextColor">?attr/colorError</item>
+        <item name="errorIconDrawable">@drawable/ic_error</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+    </style>
 
     <style name="SamsungCursor" parent="TextAppearance.AppCompat">
         <item name="android:textCursorDrawable">@drawable/samsung_cursor</item>
@@ -53,13 +59,57 @@
     </style>
 
     <style name="appinfo_button_style">
-        <item name="android:layout_width">140dp</item>
-        <item name="android:layout_height">55dp</item>
-        <item name="android:background">@drawable/appinfo_btn_selector</item>
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_height">60dp</item>
         <item name="android:gravity">center</item>
+        <item name="android:textAppearance">@style/robotofont</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="appinfo_button_style_big">
+        <item name="android:layout_height">85dp</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">@style/robotofont</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="appinfo_linear_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="policy_img_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="policy_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">start|center</item>
         <item name="android:textAppearance">@style/merrifont</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="policy_switch_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:maxWidth">320dp</item>
+        <item name="android:minWidth">310dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:gravity">start|center</item>
+        <item name="android:textAppearance">@style/robotofont</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">

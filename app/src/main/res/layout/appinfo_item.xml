@@ -22,7 +22,7 @@
             android:textSize="14sp"
             android:textAppearance="@style/merrifont"
             android:textStyle="bold|italic"
-            android:textColor="@color/appinfo_title"
+            android:textColor="?attr/colorOnTertiaryContainer"
             android:layout_weight="1"/>
         <TextView
             android:id="@+id/content_description"
@@ -31,10 +31,10 @@
             android:padding="2dp"
             android:gravity="start|center"
             android:text="@string/app_name"
-            android:textSize="14sp"
+            android:textSize="12sp"
+            android:textColor="?attr/colorTertiary"
             android:textAppearance="@style/robotofont"
             android:textStyle="normal"
-            android:textColor="#000000"
             android:layout_weight="1"/>
         </LinearLayout>
 </LinearLayout>

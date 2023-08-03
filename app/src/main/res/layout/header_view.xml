@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/devinfo_linear_title"
+    android:gravity="center"
+    android:orientation="horizontal">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/header_title"
         android:layout_width="match_parent"
-        android:background="@color/darkblue"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/header_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Wifi"
-            android:textAppearance="@style/merrifont"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:textStyle="bold|italic"
-            android:textColor="@color/white"/>
-    </LinearLayout>
-
+        android:padding="2dp"
+        android:text="Wifi"
+        android:textAppearance="@style/merrifont"
+        android:textColor="?colorOnTertiary"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
 </LinearLayout>

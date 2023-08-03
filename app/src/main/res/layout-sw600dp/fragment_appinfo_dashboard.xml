@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@color/knox_back_color"
-    android:paddingTop="10dp"
+    android:padding="8dp"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
             android:gravity="start|center_vertical"
             android:padding="5dp"
             android:text="@string/app_states"
-            android:textColor="#FFFFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -26,113 +24,72 @@
             android:gravity="start|center_vertical"
             android:padding="5dp"
             android:text="@string/ena"
-            android:textColor="@color/green"
+            android:textColor="?attr/permission_text_color_true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/info"
-            android:textAppearance="@android:style/TextAppearance.Holo.Large"
             android:textSize="16sp"
             android:gravity="start|center_vertical"
             android:padding="5dp"
             android:text="@string/app_name"
-            android:textColor="#FFFFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/launch"
-            style="@style/appinfo_button_style"
-            android:text="@string/launch_app"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/open_settings"
-            style="@style/appinfo_button_style"
-            android:text="@string/open_app_settings" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/disable_app"
-            style="@style/appinfo_button_style"
-            android:text="@string/disable_app" />
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/uni_app"
-            style="@style/appinfo_button_style"
-            android:text="@string/uninstall_this_app" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/play_but"
-            style="@style/appinfo_button_style"
-            android:text="@string/play_store" />
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/google_but"
-            style="@style/appinfo_button_style"
-            android:text="@string/google_it" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/galaxy_but"
-            style="@style/appinfo_button_style"
-            android:text="@string/galaxy_store" />
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-    </LinearLayout>
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                style="@style/appinfo_linear_style">
+                <Button
+                    android:id="@+id/launch"
+                    android:layout_alignParentStart="true"
+                    style="@style/appinfo_button_style_big"
+                    android:text="@string/launch_app"/>
+                <Button
+                    android:id="@+id/open_settings"
+                    android:layout_alignParentEnd="true"
+                    style="@style/appinfo_button_style_big"
+                    android:text="@string/open_app_settings" />
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/appinfo_linear_style">
+                <Button
+                    android:id="@+id/disable_app"
+                    android:layout_alignParentStart="true"
+                    style="@style/appinfo_button_style_big"
+                    android:text="@string/disable_app" />
+                <Button
+                    android:id="@+id/uni_app"
+                    android:layout_alignParentEnd="true"
+                    style="@style/appinfo_button_style_big"
+                    android:text="@string/uninstall_this_app" />
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/appinfo_linear_style">
+                <Button
+                    android:id="@+id/play_but"
+                    android:layout_alignParentStart="true"
+                    style="@style/appinfo_button_style_big"
+                    android:text="@string/play_store" />
+                <Button
+                    android:id="@+id/google_but"
+                    android:layout_alignParentEnd="true"
+                    style="@style/appinfo_button_style_big"
+                    android:text="@string/google_it" />
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/appinfo_linear_style">
+                <Button
+                    android:id="@+id/galaxy_but"
+                    android:layout_alignParentStart="true"
+                    style="@style/appinfo_button_style_big"
+                    android:text="@string/galaxy_store" />
+            </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

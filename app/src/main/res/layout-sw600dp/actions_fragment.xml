@@ -1,180 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/knox_back_color"
     android:layout_height="match_parent">
-<LinearLayout
-android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/ex_apk"
-            style="@style/appinfo_button_style"
-            android:text="@string/export_apk" />
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/ex_icon"
-            style="@style/appinfo_button_style"
-            android:text="@string/extract_app_icon" />
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/ex_apk"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/export_apk" />
+
+            <Button
+                android:id="@+id/ex_icon"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/extract_app_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/share_but"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/share_app" />
+
+            <Button
+                android:id="@+id/prev_start"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/prevent_start" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/add_icon"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/add_icon_to_homescreen" />
+
+            <Button
+                android:id="@+id/prev_batt"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/prevent_battery_optimize" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/prev_cache"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/prevent_clear_cache" />
+
+            <Button
+                android:id="@+id/prev_data"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/prevent_clear_data" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/prev_stop"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/prevent_close_or_force_stop" />
+
+            <Button
+                android:id="@+id/prev_uninstall"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/prevent_uninstall" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/wipe_data"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/wipe_app_data" />
+
+            <Button
+                android:id="@+id/stop_app"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/force_stop_app" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/blc_net"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/prevent_network" />
+
+            <Button
+                android:id="@+id/blc_upd"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/prevent_app_updates" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/ext_mani"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentStart="true"
+                android:text="@string/extract_manifest_xml_file" />
+
+            <Button
+                android:id="@+id/dis_admin"
+                style="@style/appinfo_button_style_big"
+                android:layout_alignParentEnd="true"
+                android:text="@string/disable_admin_activation" />
+        </RelativeLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/share_but"
-            style="@style/appinfo_button_style"
-            android:text="@string/share_app" />
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/prev_start"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_start"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/add_icon"
-            style="@style/appinfo_button_style"
-            android:text="@string/add_icon_to_homescreen"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/prev_batt"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_battery_optimize"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/prev_cache"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_clear_cache"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/prev_data"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_clear_data"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/prev_stop"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_close_or_force_stop"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/prev_uninstall"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_uninstall"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/wipe_data"
-            style="@style/appinfo_button_style"
-            android:text="@string/wipe_app_data"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/stop_app"
-            style="@style/appinfo_button_style"
-            android:text="@string/force_stop_app"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/blc_net"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_network"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/blc_upd"
-            style="@style/appinfo_button_style"
-            android:text="@string/prevent_app_updates"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:layout_marginBottom="4dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/ext_mani"
-            style="@style/appinfo_button_style"
-            android:text="@string/extract_manifest_xml_file"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/dis_admin"
-            style="@style/appinfo_button_style"
-            android:text="@string/disable_admin_activation"/>
-    </LinearLayout>
-</LinearLayout>
 </ScrollView>

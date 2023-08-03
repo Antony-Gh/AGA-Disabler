@@ -62,7 +62,7 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
         monClick.onCancelClick();
         break;
       default:
-        break;
+        throw new IllegalStateException("Unexpected value: " + v.getId());
     }
     dismiss();
   }

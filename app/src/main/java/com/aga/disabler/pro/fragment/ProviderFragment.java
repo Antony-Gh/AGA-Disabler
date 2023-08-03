@@ -1,7 +1,7 @@
 package com.aga.disabler.pro.fragment;
 
 import static com.aga.disabler.pro.tools.Helper.emmtoast;
-import static com.aga.disabler.pro.tools.Helper.getappname;
+import static com.aga.disabler.pro.tools.Helper.getAttributeColor;
 import static com.aga.disabler.pro.tools.Helper.getarchiveinfo;
 import static com.aga.disabler.pro.tools.Helper.getcompname;
 
@@ -33,7 +33,6 @@ import java.util.List;
 
 public class ProviderFragment extends FragmentHolder{
     private ProviderInfo[] activityInfos;
-    private PackageManager pkgmg;
     private ApplicationPolicy ap;
 
     public static ProviderFragment getInstance(Context context, String pkgname) {
@@ -55,7 +54,6 @@ public class ProviderFragment extends FragmentHolder{
 
     public void init() {
         List<ProviderInfo> act = new ArrayList<>();
-        pkgmg = c.getPackageManager();
         EnterpriseDeviceManager edm = EnterpriseDeviceManager.getInstance(c);
         ap = edm.getApplicationPolicy();
         LinearLayout linear2 = view.findViewById(R.id.linear2);
@@ -133,12 +131,12 @@ public class ProviderFragment extends FragmentHolder{
                 info.setText(s);
                 ComponentName cp = new ComponentName(act.applicationInfo.packageName, s);
                 boolean b = ap.getApplicationComponentState(cp);
-                if (b) {
+                if(b){
                     state.setText(R.string.ena);
-                    state.setTextColor(c.getColor(R.color.green));
-                } else {
+                    state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_true));
+                }else{
                     state.setText(R.string.dis);
-                    state.setTextColor(c.getColor(R.color.no_red));
+                    state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_false));
                 }
             }
 

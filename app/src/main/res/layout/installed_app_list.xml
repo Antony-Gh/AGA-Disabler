@@ -3,27 +3,26 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:orientation="horizontal"
 	android:gravity="center"
-	android:background="@drawable/admin_installed_selector"
 	android:padding="10dp"
 	android:id="@+id/linall"
 	android:layout_height="wrap_content">
 	<androidx.cardview.widget.CardView
 		android:layout_width="match_parent"
-		app:cardBackgroundColor="@color/knox_back_color"
 		app:cardCornerRadius="10dp"
 		app:contentPadding="6dp"
+		app:cardBackgroundColor="?attr/colorTertiaryContainer"
 		android:layout_height="wrap_content">
 		<LinearLayout
 			android:layout_width="match_parent"
-			app:background="@color/knox_back_color"
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:orientation="horizontal">
 		<ImageView
 			android:id="@+id/img"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			android:scaleType="fitXY"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:padding="5dp"
+			android:scaleType="fitCenter"
 			android:transitionName="@string/img_transition"
 			android:src="@drawable/default_image"
 			android:contentDescription="@string/appimg" />
@@ -39,15 +38,15 @@
 		android:layout_weight="1">
 		<TextView
 			android:id="@+id/name"
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="2dp"
-			android:gravity="start"
+			android:gravity="center"
 			android:text="@string/app_name"
-			android:textColor="@color/white"
+			android:textColor="?attr/colorOnTertiaryContainer"
 			android:textAppearance="@style/merrifont"
 			android:textStyle="bold|italic"
-			android:textSize="11sp" />
+			android:textSize="12sp" />
 		<TextView
 			android:id="@+id/pkg"
 			android:layout_width="wrap_content"
@@ -55,14 +54,16 @@
 			android:gravity="center"
 			android:text="@string/app_package"
 			android:textAppearance="@style/robotofont"
+			android:padding="2dp"
 			android:textSize="11sp"
-			android:textColor="@color/grey" />
+			android:textColor="?attr/colorOnTertiaryContainer"
+			/>
 	</LinearLayout>
 	<androidx.appcompat.widget.AppCompatImageView
 		android:id="@+id/imagebutton"
-		android:layout_width="38dp"
-		android:layout_height="38dp"
-		android:padding="2dp"
+		android:layout_width="50dp"
+		android:layout_height="50dp"
+		android:padding="8dp"
 		android:scaleType="fitCenter"
 		android:src="@drawable/check_tristate"
 		/>

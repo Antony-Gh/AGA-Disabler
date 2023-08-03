@@ -2,21 +2,17 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:orientation="vertical"
-	android:background="@color/knox_back_color"
 	android:layout_height="match_parent">
 	<LinearLayout
 		android:id="@+id/linear_all"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="top"
-		android:padding="4dp"
 		android:orientation="vertical">
 		<com.google.android.material.appbar.AppBarLayout
 			android:layout_width="match_parent"
 			android:orientation="vertical"
-			android:background="@color/black"
-			android:layout_height="wrap_content"
-			android:theme="@style/Theme.AGADisabler.AppBarOverlay">
+			android:layout_height="wrap_content">
 			<LinearLayout
 				android:id="@+id/linear2"
 				android:layout_width="match_parent"
@@ -25,14 +21,16 @@
 				android:gravity="start|center"
 				android:orientation="horizontal"
 				android:paddingTop="5dp"
+				android:paddingBottom="5dp"
 				android:paddingEnd="10dp"
 				android:paddingStart="10dp">
 				<ImageView
 					android:id="@+id/imageview1"
-					android:layout_width="45dp"
-					android:layout_height="45dp"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
 					android:contentDescription="@string/extract_app_icon"
 					android:layout_marginEnd="4dp"
+					android:padding="5dp"
 					android:scaleType="fitXY"
 					android:transitionName="@string/img_transition"
 					android:src="@drawable/default_image" />
@@ -51,7 +49,6 @@
 						android:padding="2dp"
 						android:textAppearance="@style/merrifont"
 						android:text="@string/app_name"
-						android:textColor="@color/white"
 						android:textSize="13sp"
 						android:textStyle="bold" />
 					<TextView
@@ -61,7 +58,7 @@
 						android:gravity="start|center_vertical"
 						android:padding="2dp"
 						android:text="@string/pkgname"
-						android:textAppearance="@style/merrifont"						android:textColor="@color/white"
+						android:textAppearance="@style/merrifont"
 						android:textSize="13sp" />
 				</LinearLayout>
 			</LinearLayout>
@@ -70,21 +67,18 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				app:tabMode="scrollable"
-				app:tabIndicatorColor="@color/white"
-				app:tabTextColor="@color/grey"
-				app:tabSelectedTextColor="@color/white"
 				app:tabGravity="start"
 				app:tabIndicatorFullWidth="true"
 				app:tabIndicatorHeight="2dp"
 				app:tabTextAppearance="@style/merrifont"
-				app:tabIndicatorAnimationMode="fade"
-				android:background="?attr/colorPrimary"/>
+				app:tabIndicatorAnimationMode="fade"/>
 		</com.google.android.material.appbar.AppBarLayout>
 		<androidx.viewpager.widget.ViewPager
 			android:id="@+id/view_pager"
 			android:layout_width="match_parent"
 			android:layout_height="0dp"
 			android:layout_weight="1"
+			android:padding="8dp"
 			app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 	</LinearLayout>
 </LinearLayout>

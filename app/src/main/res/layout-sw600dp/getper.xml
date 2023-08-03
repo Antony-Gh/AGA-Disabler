@@ -1,131 +1,115 @@
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@color/knox_back_color"
 	android:orientation="vertical">
-			<ScrollView
-				android:id="@+id/linear6"
-				android:layout_width="match_parent"
-				android:layout_height="0dp"
-				android:padding="16dp"
-				android:orientation="vertical"
-				android:layout_weight="1"
-				android:gravity="center">
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:orientation="vertical"
-					android:gravity="center"
-					android:layout_height="wrap_content">
 
-					<TextView
-						android:id="@+id/info_permission"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="20dp"
-						android:layout_marginBottom="20dp"
-						android:gravity="center"
-						android:padding="4dp"
-						android:text="@string/device_admin_ex"
-						android:textColor="@color/appinfobuttoncolor"
-						android:textSize="28sp"
-						android:textAppearance="@android:style/TextAppearance.Holo.Large"
-						android:textStyle="bold" />
+	<ScrollView
+		android:id="@+id/linear6"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="vertical"
+		android:padding="8dp">
 
-					<LinearLayout
-					android:id="@+id/layouteula"
-					android:orientation="vertical"
-					android:layout_marginTop="20dp"
-					android:layout_marginBottom="20dp"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-							<TextView
-								android:layout_width="match_parent"
-								android:layout_height="match_parent"
-								android:padding="4dp"
-								android:gravity="center"
-								android:textColor="#77FFFFFF"
-								android:textSize="28sp"
-								android:textAppearance="@android:style/TextAppearance.Holo.Large"
-								android:text="@string/device_admin_fullex" />
-						<ImageView
-							android:layout_width="match_parent"
-							android:padding="5dp"
-							android:layout_height="150dp"
-							android:src="@drawable/secured_byknox_nobg"/>
-				</LinearLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/info_permission"
+				android:layout_width="700dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:gravity="center"
+				android:padding="2dp"
+				android:layout_margin="20dp"
+				android:text="@string/device_admin_ex"
+				android:textAppearance="@style/robotofont"
+				android:textColor="?attr/colorTertiary"
+				android:textSize="24sp"
+				android:textStyle="bold" />
 				<TextView
-					android:layout_marginTop="10dp"
-					android:layout_marginBottom="10dp"
-					android:textSize="28sp"
-					android:textAppearance="@android:style/TextAppearance.Holo.Large"
-					android:textStyle="bold"
-					android:textColor="@color/appinfobuttoncolor"
-					android:autoLink="none|web|email"
-					android:linksClickable="true"
-					android:id="@+id/userAgreement"
-					android:padding="2dp"
-					android:gravity="center|start"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/privacy_policy_des"/>
-				<CheckBox
-					android:id="@+id/checkBox_agreement"
-					android:layout_marginTop="10dp"
-					android:layout_marginBottom="10dp"
-					android:textSize="28sp"
-					android:textAppearance="@android:style/TextAppearance.Holo.Large"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="@color/white"
+					android:layout_width="700dp"
+					android:layout_height="match_parent"
 					android:gravity="center"
-					android:text="@string/agr" />
-					<Button
-						android:id="@+id/button4"
-						android:layout_width="300dp"
-						android:layout_height="100dp"
-						android:layout_marginTop="20dp"
-						android:layout_marginBottom="20dp"
-						android:textSize="28sp"
-						android:textAppearance="@android:style/Widget.Material.Button.Colored"
-						android:gravity="center"
-						android:textStyle="normal"
-						android:text="@string/enable_admin_btn"
-						android:background="@drawable/btn_1_bg"
-						android:textColor="#FFFFFF"/>
-					<ImageView
-						android:layout_marginTop="10dp"
-						android:layout_marginBottom="10dp"
-						android:layout_width="match_parent"
-						android:padding="5dp"
-						android:layout_height="150dp"
-						android:src="@drawable/samsung_knox_nobg"/>
-				</LinearLayout>
-			</ScrollView>
+					android:layout_margin="20dp"
+					android:padding="2dp"
+					android:text="@string/device_admin_fullex"
+					android:textAppearance="@style/robotofont"
+					android:textSize="24sp" />
+
+			<TextView
+				android:id="@+id/userAgreement"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:autoLink="none|web|email"
+				android:gravity="center|start"
+				android:linksClickable="true"
+				android:layout_margin="20dp"
+				android:padding="8dp"
+				android:text="@string/privacy_policy_des"
+				android:textAppearance="@style/robotofont"
+				android:textColor="?attr/colorTertiary"
+				android:textSize="24sp"
+				android:textStyle="bold" />
+
+			<CheckBox
+				android:id="@+id/checkBox_agreement"
+				android:layout_width="200dp"
+				android:layout_height="wrap_content"
+				android:layout_margin="20dp"
+				android:gravity="center"
+				android:text="@string/agr"
+				android:textSize="22sp" />
+
+			<Button
+				android:id="@+id/button4"
+				android:layout_width="320dp"
+				android:layout_height="120dp"
+				android:layout_margin="20dp"
+				android:gravity="center"
+				android:text="@string/enable_admin_btn"
+				android:textSize="22sp" />
+
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="300dp"
+				android:layout_margin="20dp"
+				android:padding="5dp"
+				android:src="@drawable/samsung_knox_nobg"
+				app:tint="?attr/colorPrimary"
+				android:importantForAccessibility="no" />
+		</LinearLayout>
+	</ScrollView>
+
 	<LinearLayout
 		android:id="@+id/load"
-		android:visibility="gone"
-		android:gravity="center"
 		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
 		android:orientation="vertical"
-		android:layout_height="match_parent">
+		android:visibility="gone">
+
 		<TextView
 			android:id="@+id/text"
 			android:layout_width="match_parent"
-			android:layout_height="70dp"
-			android:textColor="@color/white"
-			android:text="@string/please"
+			android:layout_height="100dp"
+			android:layout_margin="20dp"
 			android:gravity="center"
-			android:textSize="30sp"
 			android:padding="6dp"
-			android:layout_marginBottom="4dp"
-			android:layout_marginTop="4dp"
-			android:textAppearance="@android:style/TextAppearance.Holo.Large"/>
-		<com.aga.disabler.pro.adapters.AGAProgressbar
-			android:layout_width="80dp"
-			android:indeterminate="true"
+			android:text="@string/please"
+			android:textSize="28sp" />
+
+		<ProgressBar
 			android:id="@+id/prog"
-			android:indeterminateOnly="true"
-			android:layout_height="60dp"/>
+			android:layout_width="100dp"
+			android:layout_height="100dp"
+			android:indeterminate="true"
+			android:indeterminateOnly="true" />
 	</LinearLayout>
 </LinearLayout>

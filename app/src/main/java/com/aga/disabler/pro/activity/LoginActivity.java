@@ -1,24 +1,23 @@
 package com.aga.disabler.pro.activity;
 
 import static com.aga.disabler.pro.tools.Helper.getimei;
+
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aga.disabler.pro.R;
-import com.aga.disabler.pro.adapters.AGAProgressbar;
 import com.aga.disabler.pro.receiver.devicepolicy;
 import com.aga.disabler.pro.samsung.ClientEditText;
 import com.aga.disabler.pro.tools.Helper;
@@ -29,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
 public class LoginActivity extends  AppCompatActivity {
@@ -41,14 +41,11 @@ public class LoginActivity extends  AppCompatActivity {
     private String IMEI;
 
     private LinearLayout linear1;
-    private LinearLayout all;
     private LinearLayout linear61;
-    private LinearLayout linear39;
-    private ImageView imageview8;
     private ClientEditText lice;
     private TextView textview19;
-    private AGAProgressbar progressbar1;
-    private LinearLayout stnbut;
+    private ProgressBar progressbar1;
+    private Button stnbut;
     private Context c;
     private final Intent sub = new Intent();
 
@@ -71,14 +68,10 @@ public class LoginActivity extends  AppCompatActivity {
         ImageView imageview13 = findViewById(R.id.imageview13);
         ImageView imageview21 = findViewById(R.id.imageview21);
         boolean b = getIntent().getBooleanExtra("st", false);
-        all = findViewById(R.id.all);
         linear61 = findViewById(R.id.linear61);
-        linear39 = findViewById(R.id.linear39);
-        imageview8 = findViewById(R.id.imageview8);
         lice = findViewById(R.id.lice);
         textview19 = findViewById(R.id.textview19);
         progressbar1 = findViewById(R.id.aga_progress_bar);
-        progressbar1.setcolour(R.color.colorAccent);
         stnbut = findViewById(R.id.stnbut);
         IMEI = getimei(c);
         if ((Helper.getregi(c)).equals("true") && !b) {
@@ -131,34 +124,6 @@ public class LoginActivity extends  AppCompatActivity {
         _TransitionManager(linear1, 300);
         progressbar1.setVisibility(View.GONE);
         linear61.setVisibility(View.GONE);
-
-        all.setBackground(new GradientDrawable() {
-            public GradientDrawable getIns(int a, int b, int c, int d) {
-                this.setCornerRadius(a);
-                this.setStroke(b, c);
-                this.setColor(d);
-                return this;
-            }
-        }.getIns((int) 75, (int) 3, 0xFF5D4037, Color.TRANSPARENT));
-
-        linear39.setBackground(new GradientDrawable() {
-            public GradientDrawable getIns(int a, int b, int c, int d) {
-                this.setCornerRadius(a);
-                this.setStroke(b, c);
-                this.setColor(d);
-                return this;
-            }
-        }.getIns((int) 75, (int) 0, 0xFFFF9800, 0xFFFF9800));
-
-        imageview8.setColorFilter(0xFF000000, PorterDuff.Mode.MULTIPLY);
-        stnbut.setBackground(new GradientDrawable() {
-            public GradientDrawable getIns(int a, int b, int c, int d) {
-                this.setCornerRadius(a);
-                this.setStroke(b, c);
-                this.setColor(d);
-                return this;
-            }
-        }.getIns((int) 80, (int) 2, 0xFF000000, 0xFF0097A7));
     }
 
     public void _TransitionManager(final View _view, final double _duration) {
@@ -216,7 +181,6 @@ public class LoginActivity extends  AppCompatActivity {
                                 sub.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(sub);
                                 finish();
-                                break;
                             }else{
                                 i4 = ERR_LICENCE_UNAVAILABLE;
                                 break;

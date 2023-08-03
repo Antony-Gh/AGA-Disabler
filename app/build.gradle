@@ -22,8 +22,8 @@ android {
 		applicationId "com.aga.disabler.pro"
 		minSdkVersion 24
 		targetSdkVersion 33
-		versionCode 20230227
-		versionName "aga.di(2023/02/27)"
+		versionCode 20230803
+		versionName "aga.disabler(2023/08/03)"
 		multiDexEnabled true
         signingConfig signingConfigs.release
     }
@@ -55,21 +55,15 @@ android {
 
 dependencies {
 	implementation 'androidx.appcompat:appcompat:1.6.1'
-	implementation 'com.google.android.material:material:1.8.0'
+	implementation 'com.google.android.material:material:1.9.0'
 	implementation 'com.github.bumptech.glide:glide:4.12.0'
-	implementation 'com.google.code.gson:gson:2.8.9'
+	implementation 'com.google.code.gson:gson:2.9.0'
 	implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'org.jetbrains:annotations:21.0.1'
 	implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.preference:preference:1.2.0'
-    //noinspection GradleDependency
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'//Makes Errors On Update
-    //noinspection GradleDependency
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'//Makes Errors On Update
-    implementation 'androidx.navigation:navigation-fragment:2.5.3'
-    implementation 'androidx.navigation:navigation-ui:2.5.3'
-    implementation 'com.google.firebase:firebase-database:20.2.1'
-	implementation 'com.google.firebase:firebase-storage:20.2.0'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
+	implementation 'com.google.firebase:firebase-storage:20.2.1'
 	runtimeOnly files('libs/supportlib.jar')
 	compileOnly files('libs/knoxsdk.jar')
 	implementation 'com.github.tiagohm:CodeView:0.4.0'
@@ -79,12 +73,22 @@ dependencies {
 	implementation 'com.google.android.gms:play-services-location:21.0.1'
 	implementation 'com.github.AppIntro:AppIntro:6.1.0'
 	implementation 'com.getbase:floatingactionbutton:1.10.1'
-	implementation 'androidx.recyclerview:recyclerview:1.3.0'
-	//noinspection GradleDependency
-	implementation 'androidx.annotation:annotation:1.5.0'//Makes Errors On Update
-	implementation 'com.google.android.material:material:1.8.0'
+	implementation 'androidx.recyclerview:recyclerview:1.3.1'
 	implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 	implementation 'com.jaredrummler:android-device-names:2.0.0'
 	implementation 'com.andrognito.patternlockview:patternlockview:1.0.0'
 
+
+
+
+	//noinspection GradleDependency
+	implementation 'androidx.annotation:annotation:1.5.0'
+	//noinspection GradleDependency
+	implementation 'androidx.navigation:navigation-ui:2.5.3'
+	//noinspection GradleDependency
+	implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+	//noinspection GradleDependency
+	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+	//noinspection GradleDependency
+	implementation 'androidx.navigation:navigation-fragment:2.5.3'
 }

@@ -1,758 +1,805 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
-    tools:ignore="HardcodedText"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
-            <RelativeLayout
-                android:orientation="horizontal"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp"
-                android:paddingBottom="6dp"
-                android:paddingTop="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/detail_icon"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="10dp"
-                    android:scaleType="fitXY"
-                    android:layout_marginStart="10dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:contentDescription="@string/appimg" />
-                <TextView
-                    android:textStyle="bold"
-                    android:textColor="@color/darkblue"
-                    android:gravity="center_vertical"
-                    android:id="@+id/detail_app_name"
-                    android:textSize="18sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:textAppearance="@style/merrifont"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/app_name"
-                    android:layout_toEndOf="@id/detail_icon"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true" />
-            </RelativeLayout>
-            <TextView
-                android:textStyle="bold"
-                android:background="@color/darkblue"
-                android:textColor="@color/white"
-                android:textAppearance="@style/merrifont"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:textSize="14sp"
-                android:text="@string/manzoma_title" />
-            <ScrollView
+    tools:ignore="HardcodedText">
 
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+    <TextView
+        style="@style/policy_text_style"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="@string/manzoma_title"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
                 android:gravity="center"
-                android:layout_width="match_parent">
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
                 <ImageView
-                    android:layout_width="50dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/wifi_pref_icon"
-                    android:layout_height="50dp"/>
+                    style="@style/policy_img_style"
+                    android:src="@drawable/wifi_pref_icon" />
+
                 <TextView
                     android:id="@+id/_wifi_header"
-                    android:text="Wifi Policies"
-                    android:textStyle="bold|italic"
-                    android:textSize="18sp"
-                    style="@style/HwDescription"/>
+                    style="@style/policy_text_style"
+                    android:text="Wifi Policies" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_wifi_text"
-                    android:text=" Wifi"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Wifi" />
+
                 <CheckBox
                     android:id="@+id/_wifi_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_wifichange_text"
-                    android:text=" Wifi State Change"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Wifi State Change" />
+
                 <CheckBox
                     android:id="@+id/_wifichange_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_wifiauto_text"
-                    android:text=" Wifi Automatic Connection"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Wifi Automatic Connection" />
+
                 <CheckBox
                     android:id="@+id/_wifiauto_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_wifiscan_text"
-                    android:text=" Wifi Scanning"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Wifi Scanning" />
+
                 <CheckBox
                     android:id="@+id/_wifiscan_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_wifidirect_text"
-                    android:text=" Wifi Direct"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Wifi Direct" />
+
                 <CheckBox
                     android:id="@+id/_wifidirect_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_wifihot_text"
-                    android:text=" Wifi Hotspot"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Wifi Hotspot" />
+
                 <CheckBox
                     android:id="@+id/_wifihot_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
                 android:gravity="center"
-                android:layout_width="match_parent">
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
                 <ImageView
-                    android:layout_width="50dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/bluetooth_pref_icon"
-                    android:layout_height="50dp"/>
+                    style="@style/policy_img_style"
+                    android:src="@drawable/bluetooth_pref_icon" />
+
                 <TextView
                     android:id="@+id/_bluetooth_header"
-                    android:text="Bluetooth Policies"
-                    android:textStyle="bold|italic"
-                    android:textSize="18sp"
-                    style="@style/HwDescription"/>
+                    style="@style/policy_text_style"
+                    android:text="Bluetooth Policies" />
             </LinearLayout>
 
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_bluetooth_text"
-                    android:text=" Bluetooth"
-                    style="@style/HwDescription" />
+                    style="@style/HwDescription"
+                    android:text=" Bluetooth" />
+
                 <CheckBox
                     android:id="@+id/_bluetooth_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_bluetoothtethering_text"
-                    android:text=" Bluetooth Tethering"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Bluetooth Tethering" />
+
                 <CheckBox
                     android:id="@+id/_bluetoothtethering_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_bluetoothpairing_text"
-                    android:text=" Bluetooth Pairing"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Bluetooth Pairing" />
+
                 <CheckBox
                     android:id="@+id/_bluetoothpairing_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_bluetoothvisible_text"
-                    android:text=" Bluetooth Visible To Others"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Bluetooth Visible To Others" />
+
                 <CheckBox
                     android:id="@+id/_bluetoothvisible_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_bluetoothlaptop_text"
-                    android:text=" Bluetooth Pc and Laptop Pairing"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Bluetooth Pc and Laptop Pairing" />
+
                 <CheckBox
                     android:id="@+id/_bluetoothlaptop_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_bluetoothdata_text"
-                    android:text=" Bluetooth Data Transfer"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" Bluetooth Data Transfer" />
+
                 <CheckBox
                     android:id="@+id/_bluetoothdata_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="7dp"
                 android:gravity="center"
-                android:layout_width="match_parent">
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
                 <ImageView
-                    android:layout_width="50dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/apps_pref_icon"
-                    android:layout_height="50dp"/>
+                    style="@style/policy_img_style"
+                    android:src="@drawable/apps_pref_icon" />
+
                 <TextView
                     android:id="@+id/_apps_header"
-                    android:text="Apps Policies"
-                    android:textStyle="bold|italic"
-                    android:textSize="18sp"
-                    style="@style/HwDescription"/>
+                    style="@style/policy_text_style"
+                    android:text="Apps Policies" />
             </LinearLayout>
 
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_appadminact_text"
-                    android:text=" New Administrator Activate"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" New Administrator Activate" />
+
                 <CheckBox
                     android:id="@+id/_appadminact_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/HwLinear">
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_appadminins_text"
-                    android:text=" New Administrator Install"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text=" New Administrator Install" />
+
                 <CheckBox
                     android:id="@+id/_appadminins_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/HwLinear">
+
+                <TextView
+                    android:id="@+id/_appun_text"
+                    style="@style/HwDescription"
+                    android:text=" Non Market Apps Install" />
+
+                <CheckBox
+                    android:id="@+id/_appun_check"
+                    style="@style/HwCheckBox" />
             </LinearLayout>
 
             <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
-                <TextView
-                    android:id="@+id/_appun_text"
-                    android:text=" Non Market Apps Install"
-                    style="@style/HwDescription"/>
-                <CheckBox
-                    android:id="@+id/_appun_check"
-                    style="@style/HwCheckBox"/>
-            </LinearLayout>
-            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
                 android:gravity="center"
-                android:layout_width="match_parent">
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
                 <ImageView
-                    android:layout_width="50dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/system_pref_icon"
-                    android:layout_height="50dp"/>
+                    style="@style/policy_img_style"
+                    android:src="@drawable/system_pref_icon" />
+
                 <TextView
                     android:id="@+id/_system_header"
-                    android:text="System Policies"
-                    android:textStyle="bold|italic"
-                    android:textSize="18sp"
-                    style="@style/HwDescription"/>
+                    style="@style/policy_text_style"
+                    android:text="System Policies" />
             </LinearLayout>
-                    <LinearLayout
-                        android:background="@color/grey"
-                        style="@style/HwLinear">
-                        <TextView
-                            android:id="@+id/_vpn_text"
-                            android:text="VPN"
-                            style="@style/HwDescription"/>
-                        <CheckBox
-                            android:id="@+id/_vpn_check"
-                            style="@style/HwCheckBox"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        style="@style/HwLinear">
-                        <TextView
-                            android:id="@+id/_porn_text"
-                            android:text=" Prevent porn sites"
-                            style="@style/HwDescription"/>
-                        <CheckBox
-                            android:id="@+id/_porn_check"
-                            style="@style/HwCheckBox"/>
-                    </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
+                <TextView
+                    android:id="@+id/_vpn_text"
+                    style="@style/HwDescription"
+                    android:text="VPN" />
+
+                <CheckBox
+                    android:id="@+id/_vpn_check"
+                    style="@style/HwCheckBox" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/HwLinear">
+
+                <TextView
+                    android:id="@+id/_porn_text"
+                    style="@style/HwDescription"
+                    android:text="Prevent porn sites" />
+
+                <CheckBox
+                    android:id="@+id/_porn_check"
+                    style="@style/HwCheckBox" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_airplane_text"
-                    android:text=" Airplane Mode"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Airplane Mode" />
+
                 <CheckBox
                     android:id="@+id/_airplane_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_androidbeam_text"
-                    android:text="Android Beam"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:baselineAligned="false"
+                    android:text="Android Beam" />
+
                 <CheckBox
                     android:id="@+id/_androidbeam_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_clipapps_text"
-                    android:text="ClipBoard Between Apps"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="ClipBoard Between Apps" />
+
                 <CheckBox
                     android:id="@+id/_clipapps_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_datasaver_text"
-                    android:text="Data Saver"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Data Saver" />
+
                 <CheckBox
                     android:id="@+id/_datasaver_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_devmode_text"
-                    android:text="Developer Mode"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Developer Mode" />
+
                 <CheckBox
                     android:id="@+id/_devmode_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_facres_text"
-                    android:text="Factory Reset"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Factory Reset" />
+
                 <CheckBox
                     android:id="@+id/_facres_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_downmode_text"
-                    android:text="Download Mode"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Download Mode" />
+
                 <CheckBox
                     android:id="@+id/_downmode_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_googlesync_text"
-                    android:text="Google Auto Sync"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Google Auto Sync" />
+
                 <CheckBox
                     android:id="@+id/_googlesync_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_googlerep_text"
-                    android:text="Google Crash Report"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Google Crash Report" />
+
                 <CheckBox
                     android:id="@+id/_googlerep_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_lockviews_text"
-                    android:text="LockScreen Views"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="LockScreen Views" />
+
                 <CheckBox
                     android:id="@+id/_lockviews_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_otaup_text"
-                    android:text="Disable Device Updates"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Disable Device Updates" />
+
                 <CheckBox
                     android:id="@+id/_otaup_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_powers_text"
-                    android:text="Power Saving Mode"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Power Saving Mode" />
+
                 <CheckBox
                     android:id="@+id/_powers_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_usbhost_text"
-                    android:text="Usb Host Storage"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Usb Host Storage" />
+
                 <CheckBox
                     android:id="@+id/_usbhost_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_moblim_text"
-                    android:text="User Mobile Data Limit"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="User Mobile Data Limit" />
+
                 <CheckBox
                     android:id="@+id/_moblim_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_wallc_text"
-                    android:text="WallPaper Change"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="WallPaper Change" />
+
                 <CheckBox
                     android:id="@+id/_wallc_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_googleb_text"
-                    android:text="Google Account Backup"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Google Account Backup" />
+
                 <CheckBox
                     android:id="@+id/_googleb_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_cam_text"
-                    android:text="Camera"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Camera" />
+
                 <CheckBox
                     android:id="@+id/_cam_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_mobda_text"
-                    android:text="Mobile Data"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Mobile Data" />
+
                 <CheckBox
                     android:id="@+id/_mobda_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_clip_text"
-                    android:text="ClipBoard"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="ClipBoard" />
+
                 <CheckBox
                     android:id="@+id/_clip_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_head_text"
-                    android:text="HeadPhones"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="HeadPhones" />
+
                 <CheckBox
                     android:id="@+id/_head_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_lock_text"
-                    android:text="LockScreen"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="LockScreen" />
+
                 <CheckBox
                     android:id="@+id/_lock_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_mic_text"
-                    android:text="Microphone"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Microphone" />
+
                 <CheckBox
                     android:id="@+id/_mic_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_sccap_text"
-                    android:text="ScreenCapture"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="ScreenCapture" />
+
                 <CheckBox
                     android:id="@+id/_sccap_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_sdca_text"
-                    android:text="SD Card"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="SD Card" />
+
                 <CheckBox
                     android:id="@+id/_sdca_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_usbco_text"
-                    android:text="USB Connections"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="USB Connections" />
+
                 <CheckBox
                     android:id="@+id/_usbco_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_safe_text"
-                    android:text="Safe Mode"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Safe Mode" />
+
                 <CheckBox
                     android:id="@+id/_safe_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_teth_text"
-                    android:text="Tethering"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Tethering" />
+
                 <CheckBox
                     android:id="@+id/_teth_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_scrpin_text"
-                    android:text="Screen Pinning"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Screen Pinning" />
+
                 <CheckBox
                     android:id="@+id/_scrpin_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                android:background="@color/grey"
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_shli_text"
-                    android:text="Sharing"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Sharing" />
+
                 <CheckBox
                     android:id="@+id/_shli_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_stae_text"
-                    android:text="Status Bar Expansion"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Status Bar Expansion" />
+
                 <CheckBox
                     android:id="@+id/_stae_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_setc_text"
-                    android:text="All Settings Change"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="All Settings Change" />
+
                 <CheckBox
                     android:id="@+id/_setc_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-                    <LinearLayout
-                        style="@style/HwLinear">
-                        <TextView
-                            android:id="@+id/_devoff_text"
-                            android:text="Prevent Device Off"
-                            style="@style/HwDescription"/>
-                        <CheckBox
-                            android:id="@+id/_devoff_check"
-                            style="@style/HwCheckBox"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:background="@color/grey"
-                        style="@style/HwLinear">
-                        <TextView
-                            android:id="@+id/_ch_text"
-                            android:text="Prevent Charging screen"
-                            style="@style/HwDescription"/>
-                        <CheckBox
-                            android:id="@+id/_ch_check"
-                            style="@style/HwCheckBox"/>
-                    </LinearLayout>
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
-                android:gravity="center"
-                android:layout_width="match_parent">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/hardware_pref_icon"
-                    android:layout_height="50dp"/>
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
-                    android:id="@+id/_keys_header"
-                    android:text="Software Keys Policies"
-                    android:textStyle="bold|italic"
-                    android:textSize="18sp"
-                    style="@style/HwDescription"/>
+                    android:id="@+id/_devoff_text"
+                    style="@style/HwDescription"
+                    android:text="Prevent Device Off" />
+
+                <CheckBox
+                    android:id="@+id/_devoff_check"
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
+
                 style="@style/HwLinear">
+
+                <TextView
+                    android:id="@+id/_ch_text"
+                    style="@style/HwDescription"
+                    android:text="Prevent Charging screen" />
+
+                <CheckBox
+                    android:id="@+id/_ch_check"
+                    style="@style/HwCheckBox" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <ImageView
+                    style="@style/policy_img_style"
+                    android:src="@drawable/hardware_pref_icon" />
+
+                <TextView
+                    style="@style/policy_text_style"
+                    android:id="@+id/_keys_header"
+                    android:text="Software Keys Policies"/>
+            </LinearLayout>
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_key1_text"
-                    android:text="Back key"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Back key" />
+
                 <CheckBox
                     android:id="@+id/_key1_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_key2_text"
-                    android:text="Home Key"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Home Key" />
+
                 <CheckBox
                     android:id="@+id/_key2_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_key3_text"
-                    android:text="Recent Key"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Recent Key" />
+
                 <CheckBox
                     android:id="@+id/_key3_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_key4_text"
-                    android:text="Power Key"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Power Key" />
+
                 <CheckBox
                     android:id="@+id/_key4_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-            <LinearLayout
-                style="@style/HwLinear">
+
+            <LinearLayout style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_key5_text"
-                    android:text="Volume Up Key"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Volume Up Key" />
+
                 <CheckBox
                     android:id="@+id/_key5_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
+
             <LinearLayout
-                android:background="@color/grey"
+
                 style="@style/HwLinear">
+
                 <TextView
                     android:id="@+id/_key6_text"
-                    android:text="Volume Down Key"
-                    style="@style/HwDescription"/>
+                    style="@style/HwDescription"
+                    android:text="Volume Down Key" />
+
                 <CheckBox
                     android:id="@+id/_key6_check"
-                    style="@style/HwCheckBox"/>
+                    style="@style/HwCheckBox" />
             </LinearLayout>
-                </LinearLayout>
-            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

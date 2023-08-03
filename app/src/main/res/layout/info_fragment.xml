@@ -4,13 +4,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:padding="6dp"
-    android:background="@color/knox_back_color"
     android:layout_height="match_parent">
     <ScrollView
         android:id="@+id/vscroll1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarThumbVertical="@android:color/white"
+        android:scrollbarSize="2dp"
         android:layout_marginTop="8dp">
         <LinearLayout
             android:id="@+id/linear33"

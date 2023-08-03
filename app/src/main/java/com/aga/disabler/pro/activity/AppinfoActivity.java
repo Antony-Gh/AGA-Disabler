@@ -1,13 +1,12 @@
 package com.aga.disabler.pro.activity;
 
+import static com.aga.disabler.pro.tools.Helper.getpkgname;
+
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,8 +27,6 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static com.aga.disabler.pro.tools.Helper.getpkgname;
-
 public class AppinfoActivity extends  AppCompatActivity implements ExecutorServiceII.Tasks {
 	
 	
@@ -37,14 +34,12 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 	private String appname = "";
 	private ViewPager viewPager;
 	private LinearLayout linall;
-	private LinearLayout linload2;
 	private pageradapter adapter;
 	private TabLayout tabLayout;
 	private ImageView img;
 	private TextView te1;
 	private TextView te2;
 	private Drawable image;
-	private ExecutorServiceII exe;
 	private ProgressDialog progress;
 
 	@Override
@@ -52,6 +47,7 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.appinfo);
 		initialize();
+
 		//setupWindowAnimations();
 	}
 
@@ -74,9 +70,8 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 		linall.setVisibility(View.INVISIBLE);
 		prog();
 		Context c = AppinfoActivity.this.getApplicationContext();
-		exe = new ExecutorServiceII.ExecutorBuilder().setTasks(this).build();
+		ExecutorServiceII exe = new ExecutorServiceII.ExecutorBuilder().setTasks(this).build();
 		pkg = getpkgname(c);
-		linload2 = findViewById(R.id.load_linear);
 		viewPager = findViewById(R.id.view_pager);
 		viewPager.setOffscreenPageLimit(10);
 		tabLayout = findViewById(R.id.tabs);

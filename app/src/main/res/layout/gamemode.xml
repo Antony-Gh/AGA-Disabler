@@ -1,94 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="7dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="7dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
+        android:layout_height="60dp"
         android:gravity="center"
-        android:layout_height="60dp">
+        android:orientation="horizontal">
+
         <TextView
-            android:text="@string/games_mode"
-            style="@style/HwDescription"/>
+            style="@style/HwDescription"
+            android:text="@string/games_mode" />
+
         <CheckBox
             android:id="@+id/gm"
-            android:layout_height="match_parent"
+            style="@style/HwCheckBox"
             android:layout_width="50dp"
-            android:gravity="center"
-            style="@style/HwCheckBox"/>
+            android:layout_height="match_parent"
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
+        android:layout_height="60dp"
         android:gravity="center"
-        android:layout_height="60dp">
+        android:orientation="horizontal">
+
         <TextView
-            android:text="Installed Apps"
-            android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:textAppearance="@style/merrifont" />
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/installed_apps"
+            android:textAppearance="@style/merrifont"
+            android:textSize="20sp" />
 
         <ImageView
+            android:id="@+id/reload"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="5dp"
-            android:id="@+id/reload"
             android:padding="8dp"
-            android:src="@drawable/ic_cache_black"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_reload"
+            app:tint="?attr/colorOnBackground" />
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/load_linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:visibility="gone"
-        android:orientation="vertical">
-        <com.aga.disabler.pro.adapters.AGAProgressbar
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:indeterminate="true"
-            android:indeterminateOnly="true"/>
+            android:indeterminateOnly="true" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/list_linear"
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
         <ListView
             android:id="@+id/list"
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:layout_height="0dp"/>
+            tools:listitem="@layout/gamemodeitem" />
 
         <Button
-        android:visibility="visible"
-        android:id="@+id/save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        style="?android:attr/buttonBarButtonStyle"
-        android:textAppearance="@style/merrifont"
-        android:background="@drawable/btn_1_bg"
-        android:text="Save"
-        android:layout_margin="5dp"
-        android:textSize="20sp"
-        android:textColor="#FFFFFF"/>
+            android:id="@+id/save"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/save"
+            android:textAppearance="@style/merrifont"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

@@ -1,65 +1,56 @@
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:padding="8dp"
-	android:background="#F44336"
-	android:gravity="center"
-	android:orientation="vertical">
-		<TextView
-			android:id="@+id/textview1"
-			android:layout_width="match_parent"
-			android:layout_height="70dp"
-			android:layout_marginBottom="10dp"
-			android:background="#FFFFFFFF"
-			android:gravity="center"
-			android:text="Reinstall This App \n From Trusted Resource"
-			android:textSize="20sp"
-			android:textAppearance="@style/robotofont"
-			android:textColor="#FF000000"/>
-		<LinearLayout
-			android:layout_margin="10dp"
-			android:layout_width="wrap_content"
-			android:layout_height="50dp"
-			android:gravity="center"
-			android:orientation="horizontal">
-		<Button
-			android:id="@+id/button1"
-			android:layout_width="100dp"
-			android:layout_height="match_parent"
-			android:layout_marginEnd="15dp"
-			android:gravity="center"
-			android:textAppearance="@style/merrifont"
-			style="?android:attr/buttonBarButtonStyle"
-			android:background="@drawable/btn_1_bg"
-			android:text="Okay"
-			android:textSize="16sp"
-			android:textColor="#FFFFFF"/>
-			<Button
-				android:visibility="gone"
-				android:id="@+id/button2"
-				android:layout_width="120dp"
-				android:layout_height="match_parent"
-				android:gravity="center"
-				style="?android:attr/buttonBarButtonStyle"
-				android:textAppearance="@android:style/TextAppearance.Holo.Large"
-				android:layout_marginStart="15dp"
-				android:background="@drawable/btn_1_bg"
-				android:text="Activate Key"
-				android:textSize="16sp"
-				android:textColor="#FFFFFF"/>
-		</LinearLayout>
-	<Button
-		android:id="@+id/button3"
-		android:layout_margin="10dp"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_gravity="bottom"
-		android:gravity="center"
-		style="?android:attr/buttonBarButtonStyle"
-		android:textAppearance="@style/merrifont"
-		android:background="@drawable/btn_1_bg"
-		android:text="@string/uninstall_aga"
-		android:textSize="16sp"
-		android:textColor="#FFFFFF"/>
-	</LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorError"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/reinstall_app"
+        android:textAppearance="@style/robotofont"
+        android:textColor="?colorOnError"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/okay"
+		android:textAppearance="@style/robotofont"
+        android:textColor="?colorOnError"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/activate_key"
+        android:textColor="?colorOnError"
+		android:textAppearance="@style/robotofont"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/uninstall_aga"
+        android:textAppearance="@style/robotofont"
+        android:textColor="?colorOnError"
+        android:textSize="16sp" />
+</LinearLayout>

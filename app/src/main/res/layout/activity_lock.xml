@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/knox_back_color"
     android:padding="10dp"
     android:layout_height="match_parent">
 
@@ -10,18 +9,18 @@
         android:id="@+id/img"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo_rounded"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/text"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/app_name"
-        android:textColor="@color/white"
         android:textAppearance="@style/merrifont"
         android:gravity="center"
         android:id="@+id/text"
@@ -49,7 +48,7 @@
             android:minHeight="200dp"
             app:correctStateColor="@color/green"
             app:wrongStateColor="@color/red"
-            app:normalStateColor="@color/white"
+            app:normalStateColor="?attr/colorOnBackground"
             android:layout_height="250dp"/>
 
     </LinearLayout>
@@ -59,7 +58,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/draw_pattern_to_unlock"
-        android:textColor="@color/white"
         android:gravity="center"
         android:id="@+id/txt"
         android:textAppearance="@style/merrifont"
@@ -72,7 +70,7 @@
 
     <Button
         android:id="@+id/launch"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         style="@style/appinfo_button_style"
         app:layout_constraintTop_toBottomOf="@id/txt"
         app:layout_constraintEnd_toEndOf="parent"

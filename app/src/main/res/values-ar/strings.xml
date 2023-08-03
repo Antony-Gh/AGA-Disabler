@@ -480,5 +480,13 @@
     <string name="welcome_to_my_app">اهلا بك</string>
     <string name="your_key">اكتب مفتاح الدخول</string>
     <string name="disable_admin_activation">Disable Admin Activation</string>
+    <string name="save">Save</string>
+    <string name="installed_apps">Installed Apps</string>
+    <string name="okay">Okay</string>
+    <string name="activate_key">Activate Key</string>
+    <string name="reinstall_app">Reinstall This App \n From Trusted Resource</string>
+    <string name="default_app_theme">Default App Theme</string>
+    <string name="choose_your_theme">Choose your theme</string>
+    <string name="enable_admin_activation">Enable Admin Activation</string>
 
 </resources>

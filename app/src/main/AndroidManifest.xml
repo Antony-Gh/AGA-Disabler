@@ -141,7 +141,7 @@
         android:requestLegacyExternalStorage="true"
         android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/Theme.AGADisabler.NoActionBar"
+        android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:allowBackup"
         android:dataExtractionRules="@xml/data_extraction_rules"
         tools:targetApi="s">
@@ -178,18 +178,15 @@
 
         <activity
             android:name=".activity.AboutActivity"
-            android:label="@string/title_activity_about"
-            android:theme="@style/Theme.AGADisabler.NoActionBar" />
+            android:label="@string/title_activity_about"/>
 
         <activity
             android:name=".activity.GameModeActivity"
-            android:label="Game Mode Activity"
-            android:theme="@style/Theme.AGADisabler.NoActionBar"  />
+            android:label="Game Mode Activity"/>
 
         <activity
             android:name=".activity.LockActivity"
-            android:label="@string/lock_activity"
-            android:theme="@style/Theme.AGADisabler.NoActionBar" />
+            android:label="@string/lock_activity"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -198,8 +195,7 @@
         <activity
             android:name=".activity.ScrollingActivity"
             android:exported="true"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.AGADisabler.NoActionBar" >
+            android:label="@string/title_activity_scrolling">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -219,6 +215,7 @@
 
         <activity
             android:name=".activity.SettingsActivity"
+            android:theme="@style/AppTheme"
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".activity.AllDevicePolicyActivity"
@@ -263,7 +260,6 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.AdminActivity"
-            android:theme="@style/Theme.AGADisabler.NoActionBar"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize" />
@@ -271,7 +267,7 @@
             android:name=".activity.AppinfoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".activity.LoginActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
@@ -284,7 +280,6 @@
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:directBootAware="true"
             android:hardwareAccelerated="true"
-            android:theme="@style/Theme.AGADisabler.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.PoliciesActivity"

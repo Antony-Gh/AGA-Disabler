@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/knox_back_color"
     android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/linear2"
@@ -22,7 +21,7 @@
             android:gravity="center"
             android:textAppearance="@android:style/TextAppearance.Holo.Large"
             android:textSize="18sp"
-            android:textColor="@color/no_red"/>
+            android:textColor="?colorError"/>
     </LinearLayout>
     <ListView
         android:id="@+id/listviewall"

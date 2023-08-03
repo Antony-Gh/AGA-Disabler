@@ -1,5 +1,10 @@
 package com.aga.disabler.pro.fragment;
 
+import static com.aga.disabler.pro.tools.Helper.DEFAULT;
+import static com.aga.disabler.pro.tools.Helper.Dark;
+import static com.aga.disabler.pro.tools.Helper.LIGHT;
+import static com.aga.disabler.pro.tools.Helper.THEME_KEY;
+import static com.aga.disabler.pro.tools.Helper.THEME_PREF_KEY;
 import static com.aga.disabler.pro.tools.Helper.emmtoast;
 import static com.aga.disabler.pro.tools.Helper.shareapp;
 import static com.aga.disabler.pro.tools.Helper.uninaga;
@@ -7,10 +12,16 @@ import static com.aga.disabler.pro.tools.Helper.uninaga;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 
@@ -21,16 +32,23 @@ import com.aga.disabler.pro.activity.LockActivity;
 import com.aga.disabler.pro.activity.LoginActivity;
 import com.aga.disabler.pro.activity.PoliciesActivity;
 import com.aga.disabler.pro.activity.ScrollingActivity;
+import com.aga.disabler.pro.activity.SettingsActivity;
 
 import java.util.Arrays;
 
 
-public class FourFragment extends PreferenceFragmentCompat implements PreferenceGroup.OnPreferenceClickListener{
+public class FourFragment extends PreferenceFragmentCompat implements PreferenceGroup.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 
-    private final Activity a;
+    private AppCompatActivity a;
+    private SharedPreferences x;
 
-    public FourFragment(Activity act) {
+    public FourFragment(){
+
+    }
+
+    public FourFragment(AppCompatActivity act) {
         this.a = act;
+        x = a.getSharedPreferences(THEME_PREF_KEY, Activity.MODE_PRIVATE);
     }
 
     @Override
@@ -39,11 +57,23 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
     }
 
     @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //Save the fragment's state here
+    }
+
+    @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.pref_main, rootKey);
         for (String s : Arrays.asList("info", "about", "game", "signin", "lockaga", "shareaga", "uni", "policy", "whats", "email")) {
             findPreference(s).setOnPreferenceClickListener(this);
         }
+
+        ListPreference listPreference = findPreference("theme");
+
+        listPreference.setOnPreferenceChangeListener(this);
+        listPreference.setValue(x.getString(THEME_KEY, DEFAULT));
+
     }
 
 
@@ -51,15 +81,15 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
     public boolean onPreferenceClick(androidx.preference.Preference preference) {
         String key = preference.getKey();
         Context cont = preference.getContext();
-        switch (key){
+        switch (key) {
             case "email":
                 sendEmail(cont);
-            break;
+                break;
             case "whats":
                 callme(cont);
-            break;
+                break;
             case "policy":
-                Intent iii= new Intent();
+                Intent iii = new Intent();
                 iii.setClass(cont, PoliciesActivity.class);
                 startActivity(iii);
                 break;
@@ -102,15 +132,15 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
 
     public static void sendEmail(Context c) {
         try {
-        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-        emailIntent.setType("text/plain");
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"knkmam05@gmail.com"});
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "AGA Disabler Problem");
-        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Help me solve this problem :- \n\n");
-        emailIntent.setType("message/rfc822");
-        c.startActivity(Intent.createChooser(emailIntent, "Send email using..."));
+            final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("text/plain");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"knkmam05@gmail.com"});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "AGA Disabler Problem");
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Help me solve this problem :- \n\n");
+            emailIntent.setType("message/rfc822");
+            c.startActivity(Intent.createChooser(emailIntent, "Send email using..."));
         } catch (Exception ex) {
-            emmtoast("No email clients installed.",c);
+            emmtoast("No email clients installed.", c);
         }
     }
 
@@ -119,21 +149,46 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
         Uri con = Uri.parse("https://wa.me/+201273481309");
         Uri intg = Uri.parse("tel:+201273481309");
 
-        try{
+        try {
             c.startActivity(new Intent(Intent.ACTION_VIEW, whatsurl));
-        }catch(Exception e){
+        } catch (Exception e) {
             try {
                 c.startActivity(new Intent(Intent.ACTION_VIEW, con));
-            }catch (Exception u){
+            } catch (Exception u) {
                 try {
                     Intent intent = new Intent(Intent.ACTION_DIAL);
                     intent.setData(intg);
                     c.startActivity(intent);
-                }catch (Exception l){
-                    emmtoast("Failed",c);
+                } catch (Exception l) {
+                    emmtoast("Failed", c);
                 }
             }
         }
+    }
+
+    @Override
+    public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
+        switch (preference.getKey()) {
+            case THEME_KEY:
+                switch (newValue.toString()) {
+                    case DEFAULT:
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        break;
+                    case Dark:
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        break;
+                    case LIGHT:
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        break;
+                }
+                x.edit().putString(THEME_KEY, newValue.toString()).apply();
+                a.startActivity(new Intent(a, SettingsActivity.class));
+                a.finish();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + preference.getKey());
         }
+        return true;
+    }
 
 }

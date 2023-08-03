@@ -1,6 +1,7 @@
 package com.aga.disabler.pro.fragment;
 
 import static com.aga.disabler.pro.tools.Helper.emmtoast;
+import static com.aga.disabler.pro.tools.Helper.getAttributeColor;
 import static com.aga.disabler.pro.tools.Helper.getarchiveinfo;
 import static com.aga.disabler.pro.tools.PermInfo.getpermissioninfo;
 
@@ -140,10 +141,10 @@ public class PermissionsFragment extends FragmentHolder{
                 info.setText(getpermissioninfo(act.name, c));
                 if(getperstate(act.name, pkg)){
                     state.setText(R.string.ena);
-                    state.setTextColor(c.getColor(R.color.green));
+                    state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_true));
                 }else{
                     state.setText(R.string.dis);
-                    state.setTextColor(c.getColor(R.color.no_red));
+                    state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_false));
                 }
             }
 

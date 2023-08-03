@@ -19,6 +19,7 @@ import com.aga.disabler.pro.tools.MyAppinfo;
 import org.jetbrains.annotations.NotNull;
 
 import static com.aga.disabler.pro.tools.Helper.galaxystore;
+import static com.aga.disabler.pro.tools.Helper.getAttributeColor;
 import static com.aga.disabler.pro.tools.Helper.googleit;
 import static com.aga.disabler.pro.tools.Helper.isenableapp;
 import static com.aga.disabler.pro.tools.Helper.launchapp;
@@ -67,33 +68,36 @@ public class DashboardFragment extends FragmentHolder {
     }
 
     public void initviews() {
-        if(isenableapp(c, pkg)){
+        if (isenableapp(c, pkg)) {
             state.setText(R.string.ena);
-            state.setTextColor(getResources().getColor(R.color.green, null));
+            state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_true));
             disable_app.setText(R.string.disable_app);
-        }else{
+        } else {
             state.setText(R.string.dis);
-            state.setTextColor(getResources().getColor(R.color.no_red, null));
+            state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_false));
             disable_app.setText(R.string.enable_app);
         }
-        launch.setOnClickListener(v -> launchapp(c,pkg));
+        launch.setOnClickListener(v -> launchapp(c, pkg));
         openset.setOnClickListener(v -> MyAppinfo.activeSettingsPer(c, pkg));
         disable_app.setOnClickListener(v -> {
-            if(isenableapp(c, pkg)){
-                if(dp.disableapps(c,pkg)){
+            if (isenableapp(c, pkg)) {
+                if (dp.disableapps(c, pkg)) {
                     disable_app.setText(R.string.enable_app);
-                state.setText(R.string.dis);
-                state.setTextColor(getResources().getColor(R.color.no_red, null));
+                    state.setText(R.string.dis);
+                    state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_false));
                 }
-            }else{
-                if(dp.enableapps(c,pkg)){
+            } else {
+                if (dp.enableapps(c, pkg)) {
                     disable_app.setText(R.string.disable_app);
                     state.setText(R.string.ena);
-                    state.setTextColor(getResources().getColor(R.color.green, null));
-                }}
+                    state.setTextColor(getAttributeColor(c, R.attr.permission_text_color_true));
+                }
+            }
         });
         uni_app.setOnClickListener(v -> {
-            if(dp.uninstallapps(c, pkg)){act.finish();}
+            if (dp.uninstallapps(c, pkg)) {
+                act.finish();
+            }
         });
         play_but.setOnClickListener(v -> playstore(c, pkg));
         galaxy_but.setOnClickListener(v -> galaxystore(c, pkg));

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@color/knox_back_color"
 	android:layout_width="match_parent"
 	android:orientation="vertical"
 	android:padding="3dp"
+	android:background="?dialog_background_color"
 	android:layout_height="wrap_content">
 
 	<LinearLayout
 		android:id="@+id/alert_dialog_list_title_layout"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
-		android:layout_marginStart="9dp"
-		android:layout_marginEnd="9dp"
-		android:layout_marginBottom="7dp"
-		android:layout_marginTop="3dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginTop="5dp"
 		android:gravity="start|center"
 		android:orientation="horizontal">
 
@@ -25,18 +24,17 @@
 			android:contentDescription="@string/appimg"
 			android:gravity="center_vertical"
 			android:scaleType="fitXY"
-			android:layout_marginEnd="5.0dip"
-			android:src="@mipmap/ic_launcher" />
+			android:layout_marginEnd="5dp"
+			android:src="@drawable/logo" />
 
 		<TextView
 			android:id="@+id/alert_dialog_list_title"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:layout_marginStart="5.0dip"
+			android:layout_marginStart="5dp"
 			android:gravity="center|start"
 			android:text="@string/app_name"
 			android:textAppearance="@style/merrifont"
-			android:textColor="@color/white"
 			android:textSize="16sp" />
 	</LinearLayout>
 
@@ -44,15 +42,13 @@
 		android:id="@+id/alert_dialog_list_content"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:padding="12dp"
 		android:layout_below="@id/alert_dialog_list_title_layout"
-		android:layout_marginStart="14.0dip"
-		android:layout_marginEnd="14.0dip"
-		android:layout_marginBottom="7dp"
-		android:layout_marginTop="7.0dip"
+		android:layout_marginStart="16.0dip"
+		android:layout_marginEnd="16.0dip"
 		android:gravity="center|start"
 		android:textAppearance="@style/robotofont"
 		android:text="@string/device_admin_fullex"
-		android:textColor="@color/fav_grey"
 		android:textSize="14sp" />
 	<LinearLayout
 		android:id="@+id/view3"
@@ -60,34 +56,24 @@
 		android:orientation="horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="50.0dip"
-		android:layout_marginBottom="3dp"
-		android:layout_marginTop="7dip"
-		android:layout_marginEnd="9dp"
-		android:layout_marginStart="9dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="5dp"
+		android:layout_marginStart="8dp"
 		android:layout_below="@id/alert_dialog_list_content">
 		<Button
 			android:id="@+id/alert_dialog_list_cancel"
-			android:layout_width="90dp"
-			android:layout_height="40.0dip"
-			android:gravity="center"
-			android:layout_marginEnd="5dp"
+			android:layout_width="80dp"
+			android:layout_height="50dp"
 			android:text="@string/softkey_cancel"
-			android:background="@drawable/btn_3_bg"
-			android:textColor="@color/dialog_button_color"
 			android:textAppearance="@style/robotofont"
-			android:textSize="16sp"
-			style="?android:attr/buttonBarButtonStyle" />
+			style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush" />
 		<Button
 			android:id="@+id/alert_dialog_list_ok"
-			android:layout_width="70dp"
-			android:layout_height="40.0dip"
-			android:textSize="16sp"
-			android:gravity="center"
-			android:background="@drawable/btn_3_bg"
-			android:textColor="@color/dialog_button_color"
+			android:layout_width="65dp"
+			android:layout_height="50dp"
 			android:textAppearance="@style/robotofont"
 			android:text="@string/softkey_ok"
-			style="?android:attr/buttonBarButtonStyle" />
+			style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush"  />
 	</LinearLayout>
 
 </RelativeLayout>

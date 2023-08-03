@@ -13,7 +13,7 @@
     <shortcut
         android:shortcutId="info"
         android:enabled="true"
-        android:icon="@drawable/ic_info_dark"
+        android:icon="@drawable/ic_info"
         android:shortcutShortLabel="@string/shortcut2_label">
         <intent
             android:action="android.intent.action.VIEW"

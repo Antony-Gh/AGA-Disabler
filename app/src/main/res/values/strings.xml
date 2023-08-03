@@ -81,8 +81,8 @@
     <string name="action_settings" translatable="false">Settings</string>
     <string name="err_license_sig_mismatch">Caller package signature mismatch</string>
     <string name="device_admin_ex">This app uses the Device Administrator permission. (android.permission.BIND_DEVICE_ADMIN) Device Admin permission is used for just enabling knox license, this application does not use any Administrator policies</string>
-    <string name="device_admin_fullex">We agree we will protect the privacy and legal rights of users.\n AGA Disabler application does not gather any user information or google account information.\n Samsung KNOX API is used by this application and you need to agree to Samsungs Terms and Conditions to use this application.\n I the User of this app agree to :\n</string>
-    <string name="privacy_policy_des">Privacy policy :\n https://www2.samsungknox.com/en/privacy-policy-eu</string>
+    <string name="device_admin_fullex">We agree we will protect the privacy and legal rights of users.\n AGA Disabler application does not gather any user information or google account information.\n Samsung KNOX API is used by this application\n and you need to agree to Samsung\'s Terms and Conditions\n to use this application.\n\n I\'m the User of this app agree to :\n</string>
+    <string name="privacy_policy_des">Privacy policy :\nhttps://www2.samsungknox.com/en/privacy-policy-eu</string>
     <string name="agr">I Agree</string>
     <string name="enable_admin_btn">Enable Admin \n Permissions</string>
     <string name="check_admin">Check Admin Permission.\nPlease wait.</string>
@@ -516,5 +516,12 @@ You can disable it, delete it, or know all of its information</string>
     <string name="license_key" translatable="false">License Key</string>
     <string name="disable_admin_activation">Disable Admin Activation</string>
     <string name="enable_admin_activation">Enable Admin Activation</string>
+    <string name="save">Save</string>
+    <string name="installed_apps">Installed Apps</string>
+    <string name="okay">Okay</string>
+    <string name="activate_key">Activate Key</string>
+    <string name="reinstall_app">Reinstall This App \n From Trusted Resource</string>
+    <string name="default_app_theme">Default App Theme</string>
+    <string name="choose_your_theme">Choose your theme</string>
 
 </resources>

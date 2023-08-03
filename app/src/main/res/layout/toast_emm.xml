@@ -3,23 +3,25 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toast_root"
     android:layout_width="match_parent"
-    android:layout_height="65dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="30dp"
     android:layout_marginRight="30dp"
-     android:layout_marginBottom="10dp"
-    android:background="#d3000000">
+    android:layout_marginBottom="10dp"
+    android:gravity="center"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/toast_shape">
     <TextView
         android:id="@+id/toast_content"
         android:textSize="14sp"
         android:textAppearance="@style/robotofont"
-        android:textColor="#ffffffff"
+        android:textColor="@color/md_theme_dark_onBackground"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="35dp"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:ellipsize="end"
-        android:maxLines="3"
+        android:maxLines="2"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:text="Text" />
+        android:text="@string/app_policy" />
 </RelativeLayout>

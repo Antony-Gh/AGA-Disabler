@@ -14,6 +14,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -27,6 +28,7 @@ import android.os.StrictMode;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +63,13 @@ public class   Helper {
 
     public static final int appenbaled = 2;
     public static final int appdisabled = 4;
+
+    public static final String Dark = "dark";
+    public static final String DEFAULT = "default";
+    public static final String LIGHT = "light";
+    public static final String THEME_KEY = "theme";
+    public static final String THEME_PREF_KEY = "theme";
+    public static final String THEME_VALUE = "theme_value";
 
 
     public static final int insapp = 6;
@@ -128,6 +137,19 @@ public class   Helper {
                     });
                 }
                 return link[0];
+    }
+
+    public static int getAttributeColor(Context context, int attributeId) {
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(attributeId, typedValue, true);
+        int colorRes = typedValue.resourceId;
+        int color = -1;
+        try {
+            color = context.getColor(colorRes);
+        } catch (Resources.NotFoundException e) {
+            Log.w("Helper.getAttributeColor", "Not found color resource by id: " + colorRes);
+        }
+        return color;
     }
 
     public static void setloc(Context c, String g) {
