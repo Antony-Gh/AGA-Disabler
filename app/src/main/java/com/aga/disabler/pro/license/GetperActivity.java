@@ -21,7 +21,7 @@ import com.aga.disabler.pro.R;
 import com.aga.disabler.pro.activity.LoginActivity;
 import com.aga.disabler.pro.activity.SplashActivity;
 import com.aga.disabler.pro.receiver.devicepolicy;
-import com.aga.disabler.pro.samsung.CustomDialog;
+import com.aga.disabler.pro.tools.CustomDialog;
 import com.aga.disabler.pro.tools.Helper;
 
 public class GetperActivity extends AppCompatActivity {

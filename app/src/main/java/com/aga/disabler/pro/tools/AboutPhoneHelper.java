@@ -32,13 +32,11 @@ import android.view.WindowManager;
 import androidx.core.app.ActivityCompat;
 
 import com.aga.disabler.pro.R;
-import com.jaredrummler.android.device.DeviceName;
 import com.samsung.android.knox.EnterpriseDeviceManager;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.RandomAccessFile;
 import java.lang.reflect.Method;
 import java.net.NetworkInterface;
 import java.security.MessageDigest;
@@ -51,7 +49,6 @@ import java.util.concurrent.TimeUnit;
 
 public class AboutPhoneHelper {
     private final Context c;
-    public static final String OwnerImei = "353500113595054";
 
     public AboutPhoneHelper(Context con) {
         this.c = con;
@@ -791,7 +788,7 @@ public class AboutPhoneHelper {
 
     public String getSimstate() {
         try {
-            String s = null;
+            String s;
             TelephonyManager phoneMgr = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
             switch (phoneMgr.getSimState()) {
                 case TelephonyManager.SIM_STATE_ABSENT:
@@ -823,8 +820,6 @@ public class AboutPhoneHelper {
                     break;
                 default:
                     s = c.getString(R.string.unknown);
-                    break;
-                case TelephonyManager.SIM_STATE_UNKNOWN:
                     break;
             }
             return s;

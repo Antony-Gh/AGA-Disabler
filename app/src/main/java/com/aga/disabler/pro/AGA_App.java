@@ -3,8 +3,7 @@ package com.aga.disabler.pro;
 import android.app.Application;
 
 import com.aga.disabler.pro.activity.MainActivity;
-
-import cat.ereza.customactivityoncrash.config.CaocConfig;
+import com.aga.disabler.pro.error.CaocConfig;
 
 public class AGA_App extends Application {
 
@@ -14,6 +13,7 @@ public class AGA_App extends Application {
 		super.onCreate();
 		CaocConfig.Builder.create()
 				.backgroundMode(CaocConfig.BACKGROUND_MODE_SHOW_CUSTOM)
+				.logErrorOnRestart(true)
 				.trackActivities(true)
 				.errorDrawable(R.drawable.logo)
 				.restartActivity(MainActivity.class)

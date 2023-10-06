@@ -3,16 +3,13 @@ package com.aga.disabler.pro.activity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.content.res.AppCompatResources;
 
 import com.aga.disabler.pro.R;
-import com.aga.disabler.pro.samsung.CustomDialog;
+import com.aga.disabler.pro.tools.CustomDialog;
 import com.aga.disabler.pro.tools.Helper;
 import com.samsung.android.knox.EnterpriseDeviceManager;
 import com.samsung.android.knox.application.ApplicationPolicy;

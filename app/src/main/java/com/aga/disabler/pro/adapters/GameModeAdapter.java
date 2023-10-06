@@ -1,6 +1,7 @@
 package com.aga.disabler.pro.adapters;
 
 import static com.aga.disabler.pro.tools.Helper.Bytes2Bitmap;
+import static com.aga.disabler.pro.tools.Helper.getAttributeColor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -77,8 +78,8 @@ public class GameModeAdapter extends BaseAdapter{
 
         public ViewHolder(View _view, Context c) {
             this.con = c;
-			img =  _view.findViewById(R.id.img);
-			name = _view.findViewById(R.id.name);
+            img =  _view.findViewById(R.id.img);
+            name = _view.findViewById(R.id.name);
 			pkg = _view.findViewById(R.id.pkg);
             layout = _view.findViewById(R.id.layout);
         }
@@ -91,13 +92,13 @@ public class GameModeAdapter extends BaseAdapter{
             int typ = city.type;
             switch (typ){
                 case 0:
-                    layout.setBackgroundColor(con.getResources().getColor(R.color.white));
+                    layout.setBackgroundColor(con.getColor(android.R.color.transparent));
                 break;
                 case 1:
-                    layout.setBackgroundColor(con.getResources().getColor(R.color.yes_green));
+                    layout.setBackgroundColor(getAttributeColor(con, R.attr.permission_text_color_true));
                 break;
                 case 2:
-                    layout.setBackgroundColor(con.getResources().getColor(R.color.no_red));
+                    layout.setBackgroundColor(getAttributeColor(con, R.attr.permission_text_color_false));
                 break;
             }
 

@@ -13,6 +13,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,7 +28,7 @@ import com.aga.disabler.pro.adapters.GameModeAdapter;
 import com.aga.disabler.pro.fragment.AppGameModeList;
 import com.aga.disabler.pro.license.ExecutorServiceII;
 import com.aga.disabler.pro.receiver.JobsService;
-import com.aga.disabler.pro.samsung.CustomDialog;
+import com.aga.disabler.pro.tools.CustomDialog;
 import com.aga.disabler.pro.tools.FileUtil;
 import com.aga.disabler.pro.tools.Helper;
 import com.google.gson.Gson;
@@ -37,6 +38,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 
 public class GameModeActivity extends  AppCompatActivity implements ExecutorServiceII.Tasks {
@@ -111,7 +113,8 @@ public class GameModeActivity extends  AppCompatActivity implements ExecutorServ
 		adapter = new GameModeAdapter();
 		Button b = findViewById(R.id.save);
 		b.setOnClickListener(view -> {
-			savelist(((GameModeAdapter) listview.getAdapter()).getListStorage());
+			Runnable r = () -> savelist(((GameModeAdapter) listview.getAdapter()).getListStorage());
+			r.run();
 			emmtoast("Saved", c);
 			finish();
 		});
@@ -120,6 +123,7 @@ public class GameModeActivity extends  AppCompatActivity implements ExecutorServ
 
 
 	public List<AppGameModeList> getallapps() {
+		List<String> pkgs = addSomeSystem();
 		List<AppGameModeList> listk = new ArrayList<>();
 		PackageManager pm = c.getPackageManager();
 		List<ApplicationInfo> in = pm.getInstalledApplications(PackageManager.GET_META_DATA);
@@ -133,14 +137,13 @@ public class GameModeActivity extends  AppCompatActivity implements ExecutorServ
 				ap.setname(pm.getApplicationLabel(apin).toString());
 				ap.seticon(fromdrawabletobyte(pm.getApplicationIcon(pkg)));
 				ap.settype(AppGameModeList.App_None);
-				if((apin.flags & ApplicationInfo.FLAG_SYSTEM) == 0){
+				if((apin.flags & ApplicationInfo.FLAG_SYSTEM) == 0 || pkgs.contains(pkg)){
 					listk.add(ap);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		AppGameModeList.sortArrayList(listk);
 		return listk;
 	}
 
@@ -218,32 +221,67 @@ public class GameModeActivity extends  AppCompatActivity implements ExecutorServ
 	}
 
 	public void loadnewitems(){
-		List<AppGameModeList> alllist = getallapps();
-		List<AppGameModeList> loaded = loadGameList(path);
-		assert loaded != null;
-		Iterator<AppGameModeList> it = loaded.iterator();
-		HashMap<String, Integer> ah = new HashMap<>();
+		try {
+			List<AppGameModeList> alllist = getallapps();
+			List<AppGameModeList> loaded = loadGameList(path);
+			assert loaded != null;
+			Iterator<AppGameModeList> it = loaded.iterator();
+			HashMap<String, Integer> ah = new HashMap<>();
 
-		while (it.hasNext()){
-			try {
-				AppGameModeList a = it.next();
-				if(a.type == App_Enable || a.type == App_Disable){
-					ah.put(a.packages, a.type);
+			while (it.hasNext()) {
+				try {
+					AppGameModeList a = it.next();
+					if (a.type == App_Enable || a.type == App_Disable) {
+						ah.put(a.packages, a.type);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
-			}catch (Exception e){e.printStackTrace();}
-		}
+			}
 
-		for(int i = 0; i < alllist.size(); i++){
-			try {
-				AppGameModeList a = alllist.get(i);
-				String pp = a.packages;
-				if(ah.containsKey(pp)) alllist.get(i).type = ah.get(pp);
-		}catch (Exception e){e.printStackTrace();}
+			for (int i = 0; i < alllist.size(); i++) {
+				try {
+					AppGameModeList a = alllist.get(i);
+					String pp = a.packages;
+					if (ah.get(pp) != null && ah.containsKey(pp)) {
+						alllist.get(i).type = ah.get(pp);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			AppGameModeList.sortArrayList(alllist);
+			list = alllist;
+			savelist(alllist);
+		}catch (Exception e){
+			e.printStackTrace();
 		}
-
-		AppGameModeList.sortArrayList(alllist);
-		list = alllist;
-		savelist(alllist);
 	}
 
+	private List<String> addSomeSystem() {
+		List<String> pkgs = new ArrayList<>();
+		pkgs.add("com.google.android.apps.docs");
+		pkgs.add("com.microsoft.office.excel");
+		pkgs.add("com.facebook.katana");
+		pkgs.add("com.sec.android.app.samsungapps");
+		pkgs.add("com.google.android.gm");
+		pkgs.add("com.google.android.googlequicksearchbox");
+		pkgs.add("com.android.vending");
+		pkgs.add("com.google.android.videos");
+		pkgs.add("com.google.android.apps.maps");
+		pkgs.add("com.google.android.apps.tachyon");
+		pkgs.add("com.microsoft.skydrive");
+		pkgs.add("com.google.android.apps.photos");
+		pkgs.add("com.microsoft.office.powerpoint");
+		pkgs.add("com.google.android.apps.docs");
+		pkgs.add("com.sec.android.app.shealth");
+		pkgs.add("com.sec.android.app.sbrowser");
+		pkgs.add("com.samsung.android.voc");
+		pkgs.add("com.samsung.android.samsungpass");
+		pkgs.add("com.samsung.knox.securefolder");
+		pkgs.add("com.skype.raider");
+		pkgs.add("com.microsoft.office.word");
+		pkgs.add("com.google.android.youtube");
+		return pkgs;
+	}
 }

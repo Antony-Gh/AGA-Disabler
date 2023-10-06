@@ -41,7 +41,6 @@ import com.aga.disabler.pro.fragment.AppGameModeList;
 import com.aga.disabler.pro.fragment.AppList;
 import com.aga.disabler.pro.receiver.DeviceAdmin;
 import com.aga.disabler.pro.receiver.devicepolicy;
-import com.aga.disabler.pro.samsung.CustomDialog;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
@@ -152,75 +151,7 @@ public class   Helper {
         return color;
     }
 
-    public static void setloc(Context c, String g) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        s.edit().putString("loc", g).apply();
-    }
 
-    public static String getloc(Context c) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        return s.getString("loc", "");
-    }
-
-    public static void setgamemode(Context c, boolean g) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        s.edit().putBoolean("game", g).apply();
-    }
-
-    public static Boolean getgamemode(Context c) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        return s.getBoolean("game", false);
-    }
-
-    public static Boolean getpass(Context c) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        return s.getBoolean("state", true);
-    }
-
-    public static void setpass(Context c, boolean g) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        s.edit().putBoolean("state", g).apply();
-    }
-
-    public static String getlic(Context c) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        return s.getString("lic", "");
-    }
-
-    public static void setinfo(Context c, String g) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        s.edit().putString("info", g).apply();
-    }
-
-    public static String getinfo(Context c) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        return s.getString("info", "");
-    }
-
-    public static void setlic(Context c, String g) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        s.edit().putString("lic", g).apply();
-    }
-
-    public static String getregi(Context c) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        return s.getString("regi", "");
-    }
-
-    public static void setregi(Context c, String g) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        s.edit().putString("regi", g).apply();
-    }
-
-    public static String getpattern(Context c) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        return s.getString("pattern", "");
-    }
-
-    public static void setpattern(Context c, String g) {
-        SharedPreferences s = c.getSharedPreferences("app_default", Activity.MODE_PRIVATE);
-        s.edit().putString("pattern", g).apply();
-    }
 
     public static void extractmanifest(Context c, String pkg) {
         final ManifestResolver mr = new ManifestResolver();
@@ -620,13 +551,12 @@ public class   Helper {
         }
     }
 
-    public static void CreateKnoxAlert(Activity act, String title, String msg, CustomDialog.onClick on) {
+    public static void CreateKnoxAlert(Context c, String title, String msg, CustomDialog.onClick on) {
         new CustomDialog.CustomDialogBuilder()
-                .setActvity(act)
-                .setContexttt(act.getApplicationContext())
-                .setlisteners(on)
-                .settitle(title)
-                .setmsg(msg)
+                .setDialogContext(c)
+                .setListeners(on)
+                .setTitle(title)
+                .setMessage(msg)
                 .build();
     }
 

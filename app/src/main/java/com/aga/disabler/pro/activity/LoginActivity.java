@@ -6,21 +6,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aga.disabler.pro.R;
 import com.aga.disabler.pro.receiver.devicepolicy;
-import com.aga.disabler.pro.samsung.ClientEditText;
 import com.aga.disabler.pro.tools.Helper;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,10 +41,8 @@ public class LoginActivity extends  AppCompatActivity {
     private static final int ERR_UNKNOWN = 0;
     private String IMEI;
 
-    private LinearLayout linear1;
-    private LinearLayout linear61;
-    private ClientEditText lice;
-    private TextView textview19;
+    private TextInputLayout textField;
+    private TextInputEditText lice;
     private ProgressBar progressbar1;
     private Button stnbut;
     private Context c;
@@ -60,7 +59,6 @@ public class LoginActivity extends  AppCompatActivity {
 
     private void initialize() {
         c = LoginActivity.this.getApplicationContext();
-        linear1 = findViewById(R.id.linear1);
         ImageView imageview9 = findViewById(R.id.imageview9);
         ImageView imageview10 = findViewById(R.id.imageview10);
         ImageView imageview11 = findViewById(R.id.imageview11);
@@ -68,9 +66,8 @@ public class LoginActivity extends  AppCompatActivity {
         ImageView imageview13 = findViewById(R.id.imageview13);
         ImageView imageview21 = findViewById(R.id.imageview21);
         boolean b = getIntent().getBooleanExtra("st", false);
-        linear61 = findViewById(R.id.linear61);
+        textField = findViewById(R.id.textinputlayout5);
         lice = findViewById(R.id.lice);
-        textview19 = findViewById(R.id.textview19);
         progressbar1 = findViewById(R.id.aga_progress_bar);
         stnbut = findViewById(R.id.stnbut);
         IMEI = getimei(c);
@@ -100,7 +97,7 @@ public class LoginActivity extends  AppCompatActivity {
 
 
         stnbut.setOnClickListener(_view -> {
-            linear61.setVisibility(View.GONE);
+            setErrorTextField(false, "");
             stnbut.setVisibility(View.GONE);
             progressbar1.setVisibility(View.VISIBLE);
             if (!Objects.requireNonNull(lice.getText()).toString().equals("")) {
@@ -108,35 +105,37 @@ public class LoginActivity extends  AppCompatActivity {
             }else{
                 stnbut.setVisibility(View.VISIBLE);
                 progressbar1.setVisibility(View.GONE);
-                _Edittext_Error(lice, getString(R.string.empty_field));
+                setErrorTextField(true, getString(R.string.empty_field));
             }
         });
+
+        lice.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                setErrorTextField(false, "");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
     }
 
     private void texterror(String msg) {
         stnbut.setVisibility(View.VISIBLE);
         progressbar1.setVisibility(View.GONE);
-        linear61.setVisibility(View.VISIBLE);
-        textview19.setText(msg);
+        setErrorTextField(true, msg);
     }
 
     private void initializeLogic() {
-        _TransitionManager(linear1, 300);
         progressbar1.setVisibility(View.GONE);
-        linear61.setVisibility(View.GONE);
-    }
-
-    public void _TransitionManager(final View _view, final double _duration) {
-        LinearLayout viewgroup = (LinearLayout) _view;
-        android.transition.AutoTransition autoTransition = new android.transition.AutoTransition();
-        autoTransition.setDuration((long) _duration);
-        android.transition.TransitionManager.beginDelayedTransition(viewgroup, autoTransition);
-    }
-
-
-    public void _Edittext_Error(final TextView _ed, final String _msg) {
-        ClientEditText edit = (ClientEditText) _ed;
-        edit.setError(_msg);
+        setErrorTextField(false, "");
     }
 
     private void o() {
@@ -174,7 +173,7 @@ public class LoginActivity extends  AppCompatActivity {
                                 Context con = LoginActivity.this.getApplicationContext();
                                 devicepolicy dp = new devicepolicy(con);
                                 dp.myApppolicy(true);
-                                linear61.setVisibility(View.GONE);
+                                setErrorTextField(false, "");
                                 Helper.setregi(c, "true");
                                 Helper.setlic(c, lic);
                                 sub.setClass(c, AdminActivity.class);
@@ -230,6 +229,11 @@ public class LoginActivity extends  AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void setErrorTextField(boolean error, String s) {
+        textField.setErrorEnabled(error);
+        textField.setError(s);
     }
 
 }

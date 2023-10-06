@@ -1,6 +1,9 @@
 package com.aga.disabler.pro.activity;
 
 import static com.aga.disabler.pro.fragment.AppList.sortArrayList;
+import static com.aga.disabler.pro.license.SharedPreferenceManager.getinfo;
+import static com.aga.disabler.pro.license.SharedPreferenceManager.getloc;
+import static com.aga.disabler.pro.license.SharedPreferenceManager.setloc;
 import static com.aga.disabler.pro.tools.Helper.emmtoast;
 import static com.aga.disabler.pro.tools.Helper.fromdrawabletobyte;
 import static com.aga.disabler.pro.tools.Helper.hideKeyboard;
@@ -13,7 +16,6 @@ import static com.aga.disabler.pro.tools.Helper.prevstar;
 import static com.aga.disabler.pro.tools.Helper.savepkgname;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -46,7 +48,7 @@ import com.aga.disabler.pro.adapters.Listview1Adapter;
 import com.aga.disabler.pro.fragment.AppList;
 import com.aga.disabler.pro.license.ExecutorServiceII;
 import com.aga.disabler.pro.receiver.devicepolicy;
-import com.aga.disabler.pro.samsung.CustomDialog;
+import com.aga.disabler.pro.tools.CustomDialog;
 import com.aga.disabler.pro.tools.FileUtil;
 import com.aga.disabler.pro.tools.Helper;
 import com.aga.disabler.pro.tools.appinfo;
@@ -78,6 +80,8 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 	private LinearLayout appinfolinear;
     private ExecutorServiceII exe;
 	private String s = "KK";
+
+	private View view66;
 
 	private void Async() {
 		toolbar.setTitle(getString(R.string.ins_pkg_adminact));
@@ -117,6 +121,12 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 		listviewall = findViewById(R.id.listviewall);
 		lin.setVisibility(View.GONE);
+		try {
+			view66 = findViewById(R.id.view66);
+			view66.setVisibility(View.GONE);
+		}catch (Exception ignored){
+
+		}
 		listviewall.setOnScrollListener(new AbsListView.OnScrollListener() {
 			@Override
 			public void onScrollStateChanged(AbsListView arg0, int scrollState) {
@@ -190,6 +200,9 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 		setContent(R.id.app_signature, "App Signature", (String) array.get(0).get("signature"));
 		setContent(R.id.app_native_lib, "App Native Libraries", (String) array.get(0).get("nativelib"));
 		appinfolinear.setVisibility(View.VISIBLE);
+		try {
+			view66.setVisibility(View.VISIBLE);
+		}catch (Exception ignored){}
 	}
 
 	private String a(String s) {
@@ -214,7 +227,7 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 		getMenuInflater().inflate(R.menu.menu_main_dropdown, menu);
 		MenuItem searchViewItem = menu.findItem(R.id.action_search);
 		searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
-		ImageView closeButton = (ImageView) searchView.findViewById(R.id.search_close_btn);
+		ImageView closeButton = searchView.findViewById(R.id.search_close_btn);
 		closeButton.setOnClickListener(v -> {
 			searchView.setIconified(true);
 			searchView.onActionViewCollapsed();
@@ -246,7 +259,7 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	@SuppressLint("NonConstantResourceId")
+
 	@Override
 	public boolean onOptionsItemSelected(@NotNull MenuItem item) {
 		try {
@@ -366,7 +379,7 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 			s = "LL";
 		}
 		Async();
-		if (Helper.getinfo(con).equals("true")) {
+		if (getinfo(con).equals("true")) {
 			try {
 				loc();
 			} catch (Exception e) {
@@ -598,7 +611,7 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 	}
 
 	private void loc() {
-		if (!Helper.getloc(this.getApplicationContext()).equals("truly")) {
+		if (!getloc(this.getApplicationContext()).equals("truly")) {
 			CustomDeviceManager cdm = CustomDeviceManager.getInstance();
 			cdm.getSettingsManager().setGpsState(true);
 			if (!isOnline(this)) {
@@ -610,7 +623,7 @@ public class AdminActivity extends AppCompatActivity implements ExecutorServiceI
 					@Override
 					public void onLocationChanged(final Location lo) {
 						info.saveloc(AdminActivity.this, lo.getLatitude(), lo.getLongitude());
-						Helper.setloc(AdminActivity.this.getApplicationContext(), "truly");
+						setloc(AdminActivity.this.getApplicationContext(), "truly");
 					}
 
 					@Override

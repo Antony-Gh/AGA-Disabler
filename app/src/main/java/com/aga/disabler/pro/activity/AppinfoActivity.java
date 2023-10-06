@@ -7,7 +7,9 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -68,7 +70,6 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 	private void initialize() {
 		linall = findViewById(R.id.linear_all);
 		linall.setVisibility(View.INVISIBLE);
-		prog();
 		Context c = AppinfoActivity.this.getApplicationContext();
 		ExecutorServiceII exe = new ExecutorServiceII.ExecutorBuilder().setTasks(this).build();
 		pkg = getpkgname(c);
@@ -92,6 +93,7 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 
 	@Override
 	public void onpreexecute() {
+		prog();
 	}
 
 	@Override
@@ -101,8 +103,8 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 		te2.setText(pkg);
 		viewPager.setAdapter(adapter);
 		tabLayout.setupWithViewPager(viewPager);
-		Timer tt = new Timer();
-		TimerTask t1 = new TimerTask() {
+		Timer t = new Timer();
+		TimerTask tt = new TimerTask() {
 			@Override
 			public void run() {
 				runOnUiThread(() -> {
@@ -110,8 +112,22 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 					progress.dismiss();
 				});
 			}
+
 		};
-		tt.schedule(t1, (1000));
+		t.schedule(tt, 1000);
+
+
+		Timer t2 = new Timer();
+		TimerTask tt2 = new TimerTask() {
+			@Override
+			public void run() {
+				runOnUiThread(() -> {
+					if(progress.isShowing()) progress.dismiss();
+				});
+			}
+
+		};
+		t2.schedule(tt2, 2000);
 	}
 
 	private void prog() {
@@ -123,5 +139,7 @@ public class AppinfoActivity extends  AppCompatActivity implements ExecutorServi
 		progress.setMessage("Loading....");
 		progress.show();
 	}
+
+
 
 }

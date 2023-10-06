@@ -4,7 +4,6 @@
 	android:layout_width="match_parent"
 	android:orientation="vertical"
 	android:padding="3dp"
-	android:background="?dialog_background_color"
 	android:layout_height="wrap_content">
 
 	<LinearLayout

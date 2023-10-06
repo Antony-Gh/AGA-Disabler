@@ -15,7 +15,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +41,10 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
     private AppCompatActivity a;
     private SharedPreferences x;
 
+    private String s = "";
+
+    private ListPreference listPreference;
+
     public FourFragment(){
 
     }
@@ -54,26 +57,33 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        if(bundle!=null) s = bundle.getString(THEME_KEY);
+
+        if(s == null){
+            s="";
+        }
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        //Save the fragment's state here
+        outState.putString(THEME_KEY, listPreference.getValue());
     }
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.pref_main, rootKey);
         for (String s : Arrays.asList("info", "about", "game", "signin", "lockaga", "shareaga", "uni", "policy", "whats", "email")) {
-            findPreference(s).setOnPreferenceClickListener(this);
+            Preference p = findPreference(s);
+            if(p!=null) p.setOnPreferenceClickListener(this);
         }
 
-        ListPreference listPreference = findPreference("theme");
+        listPreference = findPreference("theme");
 
+        assert listPreference != null;
         listPreference.setOnPreferenceChangeListener(this);
-        listPreference.setValue(x.getString(THEME_KEY, DEFAULT));
-
+        if(s==null || s.equals("")) listPreference.setValue(x.getString(THEME_KEY, DEFAULT));
+        else listPreference.setValue(s);
     }
 
 
@@ -168,25 +178,23 @@ public class FourFragment extends PreferenceFragmentCompat implements Preference
 
     @Override
     public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
-        switch (preference.getKey()) {
-            case THEME_KEY:
-                switch (newValue.toString()) {
-                    case DEFAULT:
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                        break;
-                    case Dark:
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                        break;
-                    case LIGHT:
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                        break;
-                }
-                x.edit().putString(THEME_KEY, newValue.toString()).apply();
-                a.startActivity(new Intent(a, SettingsActivity.class));
-                a.finish();
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + preference.getKey());
+        if (THEME_KEY.equals(preference.getKey())) {
+            switch (newValue.toString()) {
+                case DEFAULT:
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                    break;
+                case Dark:
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    break;
+                case LIGHT:
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    break;
+            }
+            x.edit().putString(THEME_KEY, newValue.toString()).apply();
+            a.startActivity(new Intent(a, SettingsActivity.class));
+            a.finish();
+        } else {
+            throw new IllegalStateException("Unexpected value: " + preference.getKey());
         }
         return true;
     }

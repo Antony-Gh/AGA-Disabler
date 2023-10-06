@@ -48,12 +48,12 @@
                 <Button
                     android:id="@+id/launch"
                     android:layout_alignParentStart="true"
-                    style="@style/appinfo_button_style_big"
+                    style="@style/appinfo_button_style"
                     android:text="@string/launch_app"/>
                 <Button
                     android:id="@+id/open_settings"
                     android:layout_alignParentEnd="true"
-                    style="@style/appinfo_button_style_big"
+                    style="@style/appinfo_button_style"
                     android:text="@string/open_app_settings" />
             </RelativeLayout>
             <RelativeLayout
@@ -61,12 +61,12 @@
                 <Button
                     android:id="@+id/disable_app"
                     android:layout_alignParentStart="true"
-                    style="@style/appinfo_button_style_big"
+                    style="@style/appinfo_button_style"
                     android:text="@string/disable_app" />
                 <Button
                     android:id="@+id/uni_app"
                     android:layout_alignParentEnd="true"
-                    style="@style/appinfo_button_style_big"
+                    style="@style/appinfo_button_style"
                     android:text="@string/uninstall_this_app" />
             </RelativeLayout>
             <RelativeLayout
@@ -74,12 +74,12 @@
                 <Button
                     android:id="@+id/play_but"
                     android:layout_alignParentStart="true"
-                    style="@style/appinfo_button_style_big"
+                    style="@style/appinfo_button_style"
                     android:text="@string/play_store" />
                 <Button
                     android:id="@+id/google_but"
                     android:layout_alignParentEnd="true"
-                    style="@style/appinfo_button_style_big"
+                    style="@style/appinfo_button_style"
                     android:text="@string/google_it" />
             </RelativeLayout>
             <RelativeLayout
@@ -87,7 +87,7 @@
                 <Button
                     android:id="@+id/galaxy_but"
                     android:layout_alignParentStart="true"
-                    style="@style/appinfo_button_style_big"
+                    style="@style/appinfo_button_style"
                     android:text="@string/galaxy_store" />
             </RelativeLayout>
         </LinearLayout>

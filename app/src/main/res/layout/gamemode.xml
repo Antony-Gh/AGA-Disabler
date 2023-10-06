@@ -49,7 +49,8 @@
             android:padding="8dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_reload"
-            app:tint="?attr/colorOnBackground" />
+            app:tint="?attr/colorOnBackground"
+            android:importantForAccessibility="no" />
 
     </LinearLayout>
 
@@ -86,7 +87,7 @@
         <Button
             android:id="@+id/save"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="@string/save"

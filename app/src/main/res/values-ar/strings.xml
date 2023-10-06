@@ -488,5 +488,22 @@
     <string name="default_app_theme">Default App Theme</string>
     <string name="choose_your_theme">Choose your theme</string>
     <string name="enable_admin_activation">Enable Admin Activation</string>
+    <string name="apply_stealth_mode">Apply Stealth Mode</string>
+    <string name="stealth_mode_enabled">Stealth Mode Enabled</string>
+    <string name="stealth_mode_disabled">Stealth Mode Disabled</string>
+    <string name="saved_pattern_was_removed">Saved pattern was removed</string>
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation">An unexpected error occurred.\nSorry for the inconvenience.</string>
+    <string name="customactivityoncrash_error_activity_restart_app">Restart app</string>
+    <string name="customactivityoncrash_error_activity_close_app">Close app</string>
+    <string name="customactivityoncrash_error_activity_error_details">Error details</string>
+    <string name="customactivityoncrash_error_activity_error_details_title">Error details</string>
+    <string name="customactivityoncrash_error_activity_error_details_close">Close</string>
+    <string name="customactivityoncrash_error_activity_error_details_copy">Copy to clipboard</string>
+    <string name="customactivityoncrash_error_activity_error_details_copied">Copied to clipboard</string>
+    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">Error information</string>
+    <string name="error_details">Error Details :</string>
+    <string name="activate_gamemode_msg">Do you Want to Activate Game Mode ?</string>
+    <string name="deactivate_gamemode_msg">Do you Want to Deactivate Game Mode ?</string>
+    <string name="activate_gamemode_title">Game Mode</string>
 
 </resources>

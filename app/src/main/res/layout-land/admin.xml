@@ -21,24 +21,17 @@
                 android:id="@+id/app_bar"
                 layout="@layout/toolbar" />
 
-			<View
-				android:layout_width="match_parent"
-				android:layout_height="2dp"
-				android:background="?colorOnBackground"/>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-				android:padding="2dp"
                 android:orientation="horizontal"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <LinearLayout
                     android:id="@+id/first"
-					android:layout_toStartOf="@id/appinfolinear"
-					android:layout_alignParentStart="true"
-                    android:layout_width="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -63,15 +56,26 @@
                         android:layout_height="match_parent"
                         android:choiceMode="none"
                         android:divider="@null"
+                        android:scrollbars="none"
                         android:dividerHeight="0dp" />
                 </LinearLayout>
 
+                <View
+                    android:id="@+id/view66"
+                    android:layout_width="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_height="match_parent"
+                    android:background="?colorOnBackground"/>
+
                 <LinearLayout
                     android:id="@+id/appinfolinear"
-                    android:layout_width="350dp"
-					android:padding="2dp"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+					android:padding="8dp"
                     android:layout_height="match_parent"
-					android:layout_alignParentEnd="true"
                     android:orientation="horizontal">
 
                         <LinearLayout
@@ -81,10 +85,10 @@
                             android:orientation="vertical"
                             android:padding="4dp">
 
-                            <RelativeLayout
+                            <LinearLayout
                                 android:id="@+id/linear2"
                                 android:layout_width="match_parent"
-                                android:layout_height="62dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="5dp"
                                 android:background="@drawable/appinfo_linear_shape"
                                 android:gravity="start|center"
@@ -95,11 +99,17 @@
 								<ImageView
 									android:id="@+id/imageview1"
 									android:layout_width="50dp"
-									android:layout_height="match_parent"
+									android:layout_height="50dp"
 									android:contentDescription="@string/extract_app_icon"
 									android:padding="5dp"
 									android:scaleType="fitCenter"
 									android:src="@drawable/default_image" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
 								<TextView
                                         android:id="@+id/appname1"
@@ -107,34 +117,30 @@
                                         android:layout_height="wrap_content"
                                         android:gravity="start|center_vertical"
                                         android:padding="2dp"
-										android:layout_toEndOf="@+id/imageview1"
                                         android:text="@string/app_name"
                                         android:textColor="?colorOnTertiaryContainer"
                                         android:textSize="14sp"
-										android:layout_alignParentTop="true"
                                         android:textStyle="bold" />
 
 								<TextView
 									android:id="@+id/pkgname1"
 									android:layout_width="wrap_content"
 									android:layout_height="wrap_content"
-									android:layout_below="@+id/appname1"
-									android:layout_alignParentBottom="true"
-									android:layout_toEndOf="@+id/imageview1"
 									android:gravity="start|center_vertical"
 									android:padding="2dp"
 									android:text="@string/pkgname"
 									android:textColor="?colorOnTertiaryContainer"
 									android:textSize="14sp" />
+                                </LinearLayout>
 
-                            </RelativeLayout>
+                            </LinearLayout>
 
                                 <ScrollView
                                     android:id="@+id/vscroll1"
                                     android:layout_width="match_parent"
-									android:layout_height="0dp"
-									android:layout_weight="1"
+									android:layout_height="match_parent"
                                     android:layout_marginTop="8dp"
+                                    android:scrollbars="none"
                                     android:padding="2dp">
 
                                     <LinearLayout
@@ -239,7 +245,7 @@
                             android:layout_height="100dp"/>
                     </LinearLayout>
                 </LinearLayout>
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

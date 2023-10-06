@@ -10,12 +10,36 @@
     <style name="Theme.AGADisabler.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="HwCheckBox">
-        <item name="android:textColor">@android:color/black</item>
-        <item name="android:layout_width">45dp</item>
-        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textAppearance">@style/merrifont</item>
-        <item name="android:theme">@android:style/Widget.Material.CompoundButton.CheckBox</item>
+        <item name="android:theme">@style/Widget.Material3.CompoundButton.CheckBox</item>
+    </style>
+
+    <style name="Theme.AGADisabler.Dialog" parent="AppTheme.NoActionBar">
+        <item name="windowFixedHeightMajor">@null</item>
+        <item name="windowFixedHeightMinor">@null</item>
+        <item name="windowFixedWidthMajor">@null</item>
+        <item name="windowFixedWidthMinor">@null</item>
+        <item name="android:windowElevation">16dp</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowTitleBackgroundStyle">@style/Base.DialogWindowTitleBackground.AppCompat</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowMinWidthMajor">@dimen/abc_dialog_min_width_major</item>
+        <item name="windowMinWidthMinor">@dimen/abc_dialog_min_width_minor</item>
+        <item name="dialogCornerRadius">10dp</item>
+        <item name="actionBarSize">60dp</item>
+        <item name="windowNoTitle">false</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0.0f</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
     <style name="HwLinear">
@@ -29,11 +53,10 @@
 
     <style name="HwDescription">
         <item name="android:padding">5dp</item>
-        <item name="android:gravity">start</item>
+        <item name="android:gravity">start|center</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1.0</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:textAppearance">@style/robotofont</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -46,32 +69,17 @@
         <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
     </style>
 
-    <style name="SamsungCursor" parent="TextAppearance.AppCompat">
-        <item name="android:textCursorDrawable">@drawable/samsung_cursor</item>
-        <item name="android:background">@drawable/client_edittext_bg</item>
-        <item name="android:textColorHint">#33ffffff</item>
-    </style>
-
 
     <style name="appinfo_fab_style">
-        <item name="android:textColor">#FF000000</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 
     <style name="appinfo_button_style">
-        <item name="android:layout_width">130dp</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textAppearance">@style/robotofont</item>
         <item name="android:textSize">11sp</item>
-    </style>
-
-    <style name="appinfo_button_style_big">
-        <item name="android:layout_height">85dp</item>
-        <item name="android:layout_width">300dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textAppearance">@style/robotofont</item>
-        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="appinfo_linear_style">

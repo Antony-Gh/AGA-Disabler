@@ -1,82 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:orientation="horizontal"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/text"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAccessibility="no" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/app_name"
-        android:textAppearance="@style/merrifont"
-        android:gravity="center"
-        android:id="@+id/text"
-        app:layout_constraintBottom_toTopOf="@id/lock_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img"
-        android:textSize="20sp"
-        android:textStyle="italic" />
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/stealth_switch"
         android:gravity="center"
-        android:id="@+id/lock_layout"
+        android:layout_margin="7dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img">
+        android:layout_height="250dp"
+        android:baselineAligned="false">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:id="@+id/text"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:drawableTopCompat="@drawable/logo" />
 
-        <com.andrognito.patternlockview.PatternLockView
-            android:id="@+id/pattern_lock_view"
-            android:layout_width="250dp"
-            android:minHeight="200dp"
-            app:correctStateColor="@color/green"
-            app:wrongStateColor="@color/red"
-            app:normalStateColor="?attr/colorOnBackground"
-            android:layout_height="250dp"/>
+        <LinearLayout
+            android:id="@+id/lock_layout"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.aga.disabler.pro.lockview.PatternLockView
+                android:id="@+id/pattern_lock_view"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:correctStateColor="?attr/permission_text_color_true"
+                app:normalStateColor="?colorOnBackground"
+                app:wrongStateColor="?attr/permission_text_color_false" />
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:text="@string/draw_pattern_to_unlock"
+                android:textSize="24sp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/draw_pattern_to_unlock"
-        android:gravity="center"
-        android:id="@+id/txt"
-        android:textAppearance="@style/merrifont"
-        app:layout_constraintTop_toBottomOf="@id/lock_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/launch"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"/>
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/stealth_switch"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@+id/launch"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:text="@string/apply_stealth_mode"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/launch"
-        android:layout_width="320dp"
         style="@style/appinfo_button_style"
-        app:layout_constraintTop_toBottomOf="@id/txt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/remove_current_pattern"/>
+        android:layout_width="320dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:text="@string/remove_current_pattern"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

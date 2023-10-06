@@ -19,13 +19,13 @@
 
             <Button
                 android:id="@+id/ex_apk"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/export_apk" />
 
             <Button
                 android:id="@+id/ex_icon"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/extract_app_icon" />
         </RelativeLayout>
@@ -41,13 +41,13 @@
 
             <Button
                 android:id="@+id/share_but"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/share_app" />
 
             <Button
                 android:id="@+id/prev_start"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/prevent_start" />
         </RelativeLayout>
@@ -63,13 +63,13 @@
 
             <Button
                 android:id="@+id/add_icon"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/add_icon_to_homescreen" />
 
             <Button
                 android:id="@+id/prev_batt"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/prevent_battery_optimize" />
         </RelativeLayout>
@@ -85,13 +85,13 @@
 
             <Button
                 android:id="@+id/prev_cache"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/prevent_clear_cache" />
 
             <Button
                 android:id="@+id/prev_data"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/prevent_clear_data" />
         </RelativeLayout>
@@ -107,13 +107,13 @@
 
             <Button
                 android:id="@+id/prev_stop"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/prevent_close_or_force_stop" />
 
             <Button
                 android:id="@+id/prev_uninstall"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/prevent_uninstall" />
         </RelativeLayout>
@@ -129,13 +129,13 @@
 
             <Button
                 android:id="@+id/wipe_data"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/wipe_app_data" />
 
             <Button
                 android:id="@+id/stop_app"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/force_stop_app" />
         </RelativeLayout>
@@ -151,13 +151,13 @@
 
             <Button
                 android:id="@+id/blc_net"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/prevent_network" />
 
             <Button
                 android:id="@+id/blc_upd"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/prevent_app_updates" />
         </RelativeLayout>
@@ -173,13 +173,13 @@
 
             <Button
                 android:id="@+id/ext_mani"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentStart="true"
                 android:text="@string/extract_manifest_xml_file" />
 
             <Button
                 android:id="@+id/dis_admin"
-                style="@style/appinfo_button_style_big"
+                style="@style/appinfo_button_style"
                 android:layout_alignParentEnd="true"
                 android:text="@string/disable_admin_activation" />
         </RelativeLayout>

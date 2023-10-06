@@ -1,85 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:padding="5dp"
     android:orientation="horizontal"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
         android:gravity="center"
-        android:id="@+id/linimg"
-        android:orientation="vertical"
-
-        app:layout_constraintBottom_toTopOf="@id/launch"
-        app:layout_constraintEnd_toStartOf="@id/lock_layout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/logo"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/app_name"
-        android:gravity="center"
-        android:id="@+id/text"
-        android:textSize="20sp"
-        android:textStyle="bold|italic" />
-
-    </LinearLayout>
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@id/stealth_switch"
+        android:layout_margin="7dp"
+        android:layout_height="match_parent"
+        android:baselineAligned="false">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
         android:id="@+id/lock_layout"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/launch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/linimg"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <com.andrognito.patternlockview.PatternLockView
+        <com.aga.disabler.pro.lockview.PatternLockView
             android:id="@+id/pattern_lock_view"
-            android:layout_width="250dp"
-            android:minHeight="200dp"
-            app:correctStateColor="@color/green"
-            app:wrongStateColor="@color/red"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:correctStateColor="?attr/permission_text_color_true"
             app:normalStateColor="?colorOnBackground"
-            android:layout_height="250dp"/>
+            app:wrongStateColor="?attr/permission_text_color_false" />
 
         <TextView
+            android:id="@+id/txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/draw_pattern_to_unlock"
             android:gravity="center"
-            android:id="@+id/txt"
-            android:textSize="20sp"
-            android:textStyle="bold|italic"/>
+            android:text="@string/draw_pattern_to_unlock"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
 
     </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/stealth_switch"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_above="@+id/launch"
+        android:layout_centerInParent="true"
+        android:layout_margin="5dp"
+        android:text="@string/apply_stealth_mode"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/launch"
-        android:layout_width="320dp"
         style="@style/appinfo_button_style"
-        app:layout_constraintTop_toBottomOf="@id/lock_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="16sp"
-        android:layout_margin="10dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/remove_current_pattern"/>
+        android:layout_width="320dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="5dp"
+        android:text="@string/remove_current_pattern"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
